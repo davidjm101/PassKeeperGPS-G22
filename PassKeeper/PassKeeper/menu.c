@@ -1,10 +1,14 @@
 #include "Bibliotecas.h"
+
+
 void menu(){
 	int opcao_menu,controlo;
 	do{
 			do{
-				printf("1- Criar nova conta\n");
-				printf("2- Iniciar Sessao na sua conta\n");
+				titulo();
+				printf("\n					Bem Vindo       \n\n");
+				printf("1- Efectuar Registo\n");
+				printf("2- Login\n");
 				printf("3- Recuperar Master Key\n");
 				printf("4- Manual de Intrucao\n\n");
 				printf("Indique a opcao que pretende: ");
@@ -25,7 +29,20 @@ void menu(){
 
 			switch (opcao_menu)
 			{
-
+			case 1:
+				//chamar a funcao de efectuar registo
+				break;
+			case 2:
+				login();
+				break;
+			case 3:
+				//chamar a funcao de recuperar masterkey
+				break;
+			case 4:
+				//chamar a funcao do manual
+				break;
+			default:
+				break;
 			}
 	} while (1);
 	

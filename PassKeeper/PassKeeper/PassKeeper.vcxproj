@@ -79,8 +79,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entradas_int.c" />
+    <ClCompile Include="Login.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
+    <ClCompile Include="menu_contas.c" />
     <ClCompile Include="titulo.c" />
   </ItemGroup>
   <ItemGroup>

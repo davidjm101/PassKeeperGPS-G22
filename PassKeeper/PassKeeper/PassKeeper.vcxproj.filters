@@ -27,6 +27,12 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Login.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_contas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">

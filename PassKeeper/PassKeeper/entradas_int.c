@@ -1,5 +1,6 @@
 #include "Bibliotecas.h"
 
+
 int entradas_int(int controlo)
 {
 	if (controlo < 1)
