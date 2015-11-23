@@ -79,8 +79,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entradas_int.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
     <ClCompile Include="titulo.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bibliotecas.h" />
+    <ClInclude Include="Estruturas_e_Prototipos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

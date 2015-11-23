@@ -1,5 +1,5 @@
-
-void menu_principal(){
+#include "Bibliotecas.h"
+void menu(){
 	int opcao_menu,controlo;
 	do{
 			do{
