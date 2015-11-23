@@ -48,6 +48,9 @@
     <ClCompile Include="Registo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cria_fich_bin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">
