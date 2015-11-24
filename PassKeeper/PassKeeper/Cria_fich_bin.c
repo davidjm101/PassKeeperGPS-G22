@@ -3,7 +3,6 @@
 int cria_fich_bin(pcliente cliente)
 {
 	int i = 0;
-	int j = 0;
 	int num_contas = 0;
 	FILE *f = NULL;
 

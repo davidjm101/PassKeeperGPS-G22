@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="Adicionar_Conta.c" />
     <ClCompile Include="Apagar_Conta.c" />
+    <ClCompile Include="Carrega_fich_bin.c" />
     <ClCompile Include="Cria_fich_bin.c" />
     <ClCompile Include="Editar_Conta.c" />
     <ClCompile Include="entradas_int.c" />

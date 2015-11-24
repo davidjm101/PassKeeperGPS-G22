@@ -44,3 +44,4 @@ void editar_conta();
 void apagar_conta();
 void pesquisar_conta();
 int cria_fich_bin(pcliente cliente);
+pcliente carrega_fich_bin();
