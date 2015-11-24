@@ -21,14 +21,18 @@ int cria_fich_bin(pcliente cliente)
 	}
 
 	fwrite(&cliente, 1, sizeof(cliente), f); // escreve no ficheiro binário a informação relativa ao cliente (utilizador) (login, masterkey, pergunta secreta, etc)
-	escreve = cliente->lista;
-	num_contas = cliente->num_contas;
+	escreve = cliente->lista; // ponteiro para lista de contas é copiado para a variavel escreve
+	num_contas = cliente->num_contas; // numero de contas do cliente é guardado numa variavel para correr a lista correctamente
+	
 
-	for (i = 0; i < num_contas; i++)
+	for (i = 0; i < num_contas; i++) //ciclo para correr lista de contas
 	{
-		fwrite(&escreve, 1, sizeof(conta), f);
-		aux = escreve->prox;
-
+		fwrite(&escreve, 1, sizeof(conta), f); // escreve conta para ficheiro binário
+		aux = escreve;							// ponteiro para a conta actual é copiado
+		escreve = escreve->prox;				// ponteiro escreve passa a apontar para o proximo elemento da lista
+		free(aux);								// memória alocada para a conta actual é libertada
 	}
 
+	free(cliente);	// memoria alocada para o cliente é libertada
+	fclose(f); // ficheiro binário é fechado
 }
