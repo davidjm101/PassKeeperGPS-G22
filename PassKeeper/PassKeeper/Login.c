@@ -12,9 +12,9 @@ void login()
 		scanf(" %[^\n]", username);
 		printf("\nIntroduza a sua MasterKey: ");
 		scanf(" %[^\n]", masterkey);
-		verifica=//chamar a funcao que vai verificar se o username e login estao bem, e retornar um boolean true se estiver tudo certo
-	} while (verifica==false);
-	
+		//chamar a funcao que vai verificar se o username e login estao bem, e retornar um boolean true se estiver tudo certo
+	} while (verifica==true);
+	menu_contas();
 	
 	
 

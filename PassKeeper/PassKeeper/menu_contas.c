@@ -31,16 +31,16 @@ void menu_contas()
 		switch (opcao_menu)
 		{
 		case 1:
-			//adicionar_conta();
+			adicionar_conta();
 			break;
 		case 2:
-			//editar_conta();
+			editar_conta();
 			break;
 		case 3:
-			//apagar_conta();
+			apagar_conta();
 			break;
 		case 4:
-			//pesquisar_conta()
+			pesquisar_conta();
 			break;
 		case 5:
 			//chamar a funcao para fazer logout

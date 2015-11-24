@@ -3,7 +3,9 @@
 void editar_conta()
 {
 	char nome_conta[MAX_NOME]="";
-	int opcao_menu, controlo;
+	int opcao_menu = 0;
+	int controlo = 0 ;
+	conta conta;
 	titulo();
 	printf("\n			Editar Conta       \n\n");
 	printf("Indique o nome da conta a editar: ");
@@ -28,19 +30,26 @@ void editar_conta()
 	if (opcao_menu == 1)
 	{
 		printf("Indique o novo login: ");
-		//fazer scanf para a struct
+		scanf(" %[^\n]", conta.login);
 		printf("Conta editada");
 	}
 	else if (opcao_menu == 2)
 	{
 		printf("Indique a nova password: ");
-		//fazer scanf para a struct
+		scanf(" %[^\n]", conta.password);
 		printf("Conta editada");
 	}
 	else 
 	{
 		printf("Indique o novo nome: ");
-		//fazer scanf para a struct
+		scanf(" %[^\n]", conta.nome);
 		printf("Conta editada");
 	}
+
+	
+	printf("\nLogin %s", conta.login);
+	printf("\nPass %s", conta.password);
+	printf("\nNome %s", conta.nome);
+
+
 }

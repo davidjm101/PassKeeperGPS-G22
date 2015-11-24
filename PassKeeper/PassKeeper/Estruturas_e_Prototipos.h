@@ -35,6 +35,7 @@ struct dados1
 
 void menu();
 void titulo();
+void registo();
 int entradas_int(int controlo);
 void login();
 void menu_contas();

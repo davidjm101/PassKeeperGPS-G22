@@ -30,7 +30,7 @@ void menu(){
 			switch (opcao_menu)
 			{
 			case 1:
-				//chamar a funcao de efectuar registo
+				registo();
 				break;
 			case 2:
 				login();

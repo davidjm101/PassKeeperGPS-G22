@@ -2,11 +2,13 @@
 
 void adicionar_conta()
 {
-	int opcao_menu, controlo;
+	int opcao_menu = 0;
+	int controlo = 0;
+	conta conta;
 	titulo();
 	printf("\n					Adicionar Conta       \n\n");
 	printf("Indique o login: ");
-	//fazer scanf da string para a struct das contas
+	scanf(" %[^\n]", conta.login);
 	do
 	{
 		printf("\nIndique se pretende password (1-Manual   2-Automatica): ");
@@ -25,7 +27,7 @@ void adicionar_conta()
 	if (opcao_menu == 1)
 	{
 		printf("\nIndique a password: ");
-		//fazer scanf da string para a struct das contas
+		scanf(" %[^\n]", conta.password);
 	}
 	else
 	{
@@ -33,10 +35,13 @@ void adicionar_conta()
 		printf("Password gerada com sucesso");
 	}
 	printf("\nIndique nome da conta: ");
-	//fazer scanf da string para a struct das contas
+	scanf(" %[^\n]", conta.nome);
+
 
 	printf("\nConta adicionada!!");
-	//fazer um printf com a informação do login, atraves da struct conta
-	//fazer um printf com a informação da password, atraves da struct conta
-	//fazer um printf com a informação do nome da conta, atraves da struct conta
+	printf("\nLogin %s", conta.login);
+	printf("\nPass %s", conta.password);
+	printf("\nNome %s", conta.nome);
+
+	//adicionar a struct a lista ligada
 }

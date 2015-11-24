@@ -30,4 +30,6 @@ void apagar_conta()
 		//apagar a conta
 		printf("\nConta apagada!");
 	}
+
+	
 }
