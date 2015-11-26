@@ -36,6 +36,7 @@ struct dados1
 void menu();
 void titulo();
 void registo();
+bool verifica_master_guidelines(char *masterkey);
 int entradas_int(int controlo);
 void login();
 void menu_contas();

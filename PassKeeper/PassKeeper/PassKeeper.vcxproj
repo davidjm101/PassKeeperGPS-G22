@@ -91,6 +91,7 @@
     <ClCompile Include="Pesquisar_Conta.c" />
     <ClCompile Include="Registo.c" />
     <ClCompile Include="titulo.c" />
+    <ClCompile Include="verifica_master_guidelines.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h" />
