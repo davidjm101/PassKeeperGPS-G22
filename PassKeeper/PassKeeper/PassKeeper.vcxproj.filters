@@ -57,6 +57,12 @@
     <ClCompile Include="verifica_master_guidelines.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Encripta.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Desencripta.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">
