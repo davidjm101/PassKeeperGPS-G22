@@ -7,8 +7,8 @@ void menu(){
 			do{
 				titulo();
 				printf("\n					Bem Vindo       \n\n");
-				printf("1- Efectuar Registo\n");
-				printf("2- Login\n");
+				printf("1- Login\n");
+				printf("2- Efectuar Registo\n");
 				printf("3- Recuperar Master Key\n");
 				printf("4- Manual de Intrucao\n");
 				printf("5- Sair\n\n");
@@ -31,10 +31,10 @@ void menu(){
 			switch (opcao_menu)
 			{
 			case 1:
-				registo();
+				login();
 				break;
 			case 2:
-				login();
+				registo();
 				break;
 			case 3:
 				//chamar a funcao de recuperar masterkey

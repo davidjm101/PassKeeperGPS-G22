@@ -6,5 +6,6 @@
 #include <windows.h>
 #include"Estruturas_e_Prototipos.h"
 #include"dirent.h"
+#include<time.h>
 
 
