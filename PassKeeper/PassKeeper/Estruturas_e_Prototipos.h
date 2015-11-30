@@ -1,10 +1,10 @@
-#define MAX_MK 16 // o numero maximo de caracteres para a master key, e para o nome da pasta
-#define MAX_USER 100 // maximo de caracteres para o username, nome de conta e pergunta de segurança
-#define MAX_RS 32 //  numero maximo de caracteres para a resposta a pergunta de segurança
-#define MAX_PS 100 // numero maximo de caracteres para a pergunta de segurança
-#define MAX_LOG 100 // numero maximo de caracteres para o login de uma conta
-#define MAX_NOME 50 // numero maximo de caracteres para o nome de uma conta
-#define MAX_PASS 16 // numero maximo de caracteres para a password de uma conta
+#define MAX_MK 17 // o numero maximo de caracteres para a master key, e para o nome da pasta
+#define MAX_USER 101 // maximo de caracteres para o username, nome de conta e pergunta de segurança
+#define MAX_RS 33 //  numero maximo de caracteres para a resposta a pergunta de segurança
+#define MAX_PS 101 // numero maximo de caracteres para a pergunta de segurança
+#define MAX_LOG 101 // numero maximo de caracteres para o login de uma conta
+#define MAX_NOME 51 // numero maximo de caracteres para o nome de uma conta
+#define MAX_PASS 17 // numero maximo de caracteres para a password de uma conta
 
 typedef struct dados2 conta, *pconta;
 struct dados2
@@ -43,3 +43,4 @@ int cria_fich_bin(pcliente cliente, char nomePasta[]);
 pcliente carrega_fich_bin(char nomePasta[]);
 
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);
+void gera_pass_auto(char password[]);
