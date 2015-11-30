@@ -35,12 +35,15 @@ bool verifica_master_guidelines(char masterkey[MAX_MK])
 			{
 				conta_numeros++;
 			}
-			//falta implementar os caracteres especiais porque ainda nao sei quais vamos utilizar para a encriptação
+			else if (masterkey[i] == '!' || masterkey[i] == '?' || masterkey[i] == '#' || masterkey[i] == '$' || masterkey[i] == '%' || masterkey[i] == '&' || masterkey[i] == '@' || masterkey[i] == '£' || masterkey[i] == '€' || masterkey[i] == '_')
+			{
+				conta_especiais++;
+			}
 		}
 	}
 
 	//verifica que a masterkey tem 2 minusculas, 2 maiusculas e 4 numeros
-	if (conta_minisculas >= 2 && conta_maiusculas >= 2 && conta_numeros >= 4)//falta depois implementar para os caracteres especiais
+	if (conta_minisculas >= 2 && conta_maiusculas >= 2 && conta_numeros >= 4 && conta_especiais>=4)//falta depois implementar para os caracteres especiais
 	{
 		return true;
 	}
