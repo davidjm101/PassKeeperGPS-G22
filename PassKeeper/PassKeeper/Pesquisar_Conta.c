@@ -17,6 +17,7 @@ void pesquisar_conta(cliente *cliente1)
 	system("PAUSE");
 
 
+
 	/*titulo();
 	printf("\n			Pesquisar Conta       \n\n");
 	printf("Indique o nome da conta a pesquisar (Pode indicar apenas um prefixo do nome): ");

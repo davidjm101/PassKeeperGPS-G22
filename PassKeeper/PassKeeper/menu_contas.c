@@ -39,7 +39,7 @@ void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 			editar_conta();
 			break;
 		case 3:
-			apagar_conta();
+			apagar_conta(cliente, nomePasta);
 			break;
 		case 4:
 			pesquisar_conta(cliente);
