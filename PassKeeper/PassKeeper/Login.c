@@ -12,12 +12,15 @@ void login()
 	pcliente aux; // Auxiliar para verificar todas as pastas
 
 	do{
+		system("cls");
 		titulo();
 		printf("\n					Login       \n\n");
 		printf("Introduza o seu username: ");
-		scanf(" %[^\n]", username);
+		fflush(stdin);
+		gets(username);
 		printf("\nIntroduza a sua MasterKey: ");
-		scanf(" %[^\n]", masterkey);
+		fflush(stdin);
+		gets(masterkey);
 		//chamar a funcao que vai verificar se o username e login estao bem, e retornar um boolean true se estiver tudo certo
 	} while (verifica==true);
 

@@ -36,7 +36,7 @@ void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 			adicionar_conta(cliente, nomePasta);
 			break;
 		case 2:
-			editar_conta(cliente);
+			editar_conta(cliente, nomePasta);
 			break;
 		case 3:
 			apagar_conta(cliente, nomePasta);

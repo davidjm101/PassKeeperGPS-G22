@@ -1,6 +1,6 @@
 #include "Bibliotecas.h"
 
-void editar_conta(cliente *cliente1)
+void editar_conta(cliente *cliente1, char nomePasta[])
 {
 	char nome_conta[MAX_NOME]="";
 	char le_dado[MAX_NOME];
@@ -9,6 +9,9 @@ void editar_conta(cliente *cliente1)
 	int controlo = 0 ;
 	int i = 0;
 	conta *aux = cliente1->lista;
+
+
+	system("cls");
 	titulo();
 	printf("\n			Editar Conta       \n\n");
 	printf("Indique o nome da conta a editar: ");
@@ -16,20 +19,20 @@ void editar_conta(cliente *cliente1)
 	gets(nome_conta);
 	while (aux != NULL)
 	{
-		if (strcmp(nome_conta, aux->nome) == 1)
-		{
-			aux = aux->prox;
-		}
-		else
+		if (strcmp(nome_conta, aux->nome) == 0)//verifica se existe algum nome igual
 		{
 			break;
 		}
-
+		else
+		{
+			aux = aux->prox;		
+		}
 	}
 	
 	if (aux == NULL)
 	{
 		printf("Nome da conta nao encontrado");
+		system("PAUSE");
 	}
 	else
 	{
@@ -83,6 +86,7 @@ void editar_conta(cliente *cliente1)
 		{
 			printf("Indique o tipo de password (1-Manual 2-Automatica) : ");
 			do{
+				fflush(stdin);
 				controlo = scanf("%d", &opcao_menu);
 				if (entradas_int(controlo) == 0)
 				{
@@ -103,11 +107,12 @@ void editar_conta(cliente *cliente1)
 			}
 			else if (opcao_menu == 2)
 			{
-				//chamar a funcao de gerar passwords automaticas
+				gera_pass_auto(password);
 			}
 			
-			printf("Pretende alterar mesmo a password para %s (1-Sim 2-Nao):", le_dado);
+			printf("Pretende alterar mesmo a password para %s (1-Sim 2-Nao):", password);
 			do{
+				fflush(stdin);
 				controlo = scanf("%d", &opcao_menu);
 				if (entradas_int(controlo) == 0)
 				{
@@ -121,7 +126,7 @@ void editar_conta(cliente *cliente1)
 			} while (controlo<1 || opcao_menu<1 || opcao_menu>2);
 			if (opcao_menu == 1)
 			{
-				strcpy(aux->password, le_dado);
+				strcpy(aux->password, password);
 				printf("Password editada");
 			}
 			else
@@ -160,10 +165,11 @@ void editar_conta(cliente *cliente1)
 			}
 		}
 
-
+		escreve_ficheiro(cliente1, nomePasta);
 		printf("\nLogin %s", aux->login);
 		printf("\nPass %s", aux->password);
 		printf("\nNome %s", aux->nome);
+		system("PAUSE");
 	}
 }
 	

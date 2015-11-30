@@ -35,7 +35,7 @@ bool verifica_master_guidelines(char masterkey[MAX_MK])
 			{
 				conta_numeros++;
 			}
-			else if (masterkey[i] == '!' || masterkey[i] == '?' || masterkey[i] == '#' || masterkey[i] == '$' || masterkey[i] == '%' || masterkey[i] == '&' || masterkey[i] == '@' || masterkey[i] == '£' || masterkey[i] == '€' || masterkey[i] == '_')
+			else if (masterkey[i] == '!' || masterkey[i] == '?' || masterkey[i] == '#' || masterkey[i] == '$' || masterkey[i] == '%' || masterkey[i] == '&' || masterkey[i] == '@' || masterkey[i] == '+' || masterkey[i] == '-' || masterkey[i] == '_')
 			{
 				conta_especiais++;
 			}

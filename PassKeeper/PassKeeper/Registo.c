@@ -5,6 +5,8 @@ void registo()
 	cliente cliente;
 	char nomePasta[16];
 	bool verifica = false;
+
+	system("cls");
 	titulo();
 	printf("\n			Registo       \n\n");
 	
@@ -31,7 +33,7 @@ void registo()
 		printf("\nIndique a MasterKey que pretende");
 		printf("\n(a sua MasterKey deve conter no minimo 4 numeros");
 		printf("\n4 letras(2 maiusculas e 2 minisculas)");
-		printf("\ne 4 caracteres especiais (ex: ! $ & %): ");
+		printf("\ne 4 caracteres especiais dos seguintes( ! ? # $ % & @ + - _ ): ");
 		fflush(stdin);
 		gets(cliente.masterkey);
 		verifica=verifica_master_guidelines(cliente.masterkey);
@@ -81,7 +83,6 @@ void registo()
 		printf("\nIndique o nome da pasta onde sera guardado o ficheiro com as suas contas: ");
 		fflush(stdin);
 		gets(nomePasta);
-		// aaa
 		if (strlen(nomePasta) < 4 || strlen(nomePasta) > 16)
 		{
 			verifica = false;

@@ -6,6 +6,8 @@ void pesquisar_conta(cliente *cliente1)
 	int cont = 1;
 	conta *aux = cliente1->lista;
 
+	system("cls");
+	titulo();
 	// Ciclo para verificar se esta a ver bem as contas
 	while (aux != NULL)
 	{

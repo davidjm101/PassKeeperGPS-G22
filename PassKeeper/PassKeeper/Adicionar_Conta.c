@@ -6,17 +6,19 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	int controlo = 0;
 	conta conta, *aux, *novo;
 	FILE *f = NULL;
-
+	bool existe = false;//variavel que serve para verificar se o nome da conta ja existe associado a outra conta
 	aux = cliente1->lista;
 
-
+	system("cls");
 	titulo();
 	printf("\n					Adicionar Conta       \n\n");
 	printf("Indique o login: ");
-	scanf(" %[^\n]", conta.login);
+	fflush(stdin);
+	gets(conta.login);
 	do
 	{
 		printf("\nIndique se pretende password (1-Manual   2-Automatica): ");
+		fflush(stdin);
 		controlo = scanf("%d", &opcao_menu);
 		if (entradas_int(controlo) == 0)
 		{
@@ -32,16 +34,45 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	if (opcao_menu == 1)
 	{
 		printf("\nIndique a password: ");
-		scanf(" %[^\n]", conta.password);
+		fflush(stdin);
+		gets(conta.password);
 	}
 	else
 	{
-		//chamar a funcao que gere passwords automaticas
+		gera_pass_auto(conta.password);
 		printf("Password gerada com sucesso");
 	}
-	printf("\nIndique nome da conta: ");
-	scanf(" %[^\n]", conta.nome);
 
+	do
+	{
+		existe = false;
+		printf("\nIndique nome da conta: ");
+		fflush(stdin);
+		gets(conta.nome);
+
+		//ciclo que verifica se existe alguma conta ja com o mesmo nome
+		while (aux != NULL)
+		{
+			if (strcmp(conta.nome, aux->nome) == 0)
+			{
+				existe = true;
+				break;
+			}
+			else
+			{
+				aux = aux->prox;
+			}
+
+		}
+
+		if (existe==true)
+		{
+			printf("\nExiste uma conta ja com esse nome, escolha outro nome de conta!");
+		}
+	} while (existe==true);
+	
+
+	aux = cliente1->lista;
 	if (aux == NULL)
 	{
 		novo = malloc(sizeof(conta));

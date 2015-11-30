@@ -7,14 +7,16 @@ void apagar_conta(cliente *cliente1, char nomePasta[])
 	int cont = 1;
 	conta *aux = cliente1->lista;
 
-
+	system("cls");
 	titulo();
 	printf("\n			Apagar Conta       \n\n");
 	printf("indique o nome da conta a apagar: ");
-	scanf(" %[^\n]", nome_conta);
+	fflush(stdin);
+	gets(nome_conta);
 
 	do{
 		printf("\nPretende mesmo apagar a conta (1-Sim  2-Nao): ");
+		fflush(stdin);
 		controlo = scanf("%d", &opcao_menu);
 		if (entradas_int(controlo) == 0)
 		{
