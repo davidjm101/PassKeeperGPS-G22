@@ -58,12 +58,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="escreve_ficheiro.c">
-	<Filter>Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Encripta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Desencripta.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gera_Pass_Auto.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
