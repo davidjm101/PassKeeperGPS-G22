@@ -10,7 +10,8 @@ void menu(){
 				printf("1- Efectuar Registo\n");
 				printf("2- Login\n");
 				printf("3- Recuperar Master Key\n");
-				printf("4- Manual de Intrucao\n\n");
+				printf("4- Manual de Intrucao\n");
+				printf("5- Sair\n\n");
 				printf("Indique a opcao que pretende: ");
 				fflush(stdin);
 				controlo = scanf("%d", &opcao_menu);// controlo serve para verificar que apenas inteiros sao inseridos
@@ -41,6 +42,8 @@ void menu(){
 			case 4:
 				//chamar a funcao do manual
 				break;
+			case 5:
+				system(exit);  //Forcar saida do programa
 			default:
 				break;
 			}

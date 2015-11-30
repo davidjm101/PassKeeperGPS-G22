@@ -1,12 +1,14 @@
 #include "Bibliotecas.h"
 
-void menu_contas()
+void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 {
 	int opcao_menu, controlo;
 	do{
 		do{
+			system("cls");
 			titulo();
 			printf("\n					Menu Contas       \n\n");
+			printf("\n\tBem vindo %s\n\n", nomeConta);
 			printf("1- Adicionar conta\n");
 			printf("2- Editar conta\n");
 			printf("3- Apagar Conta\n");
@@ -31,7 +33,7 @@ void menu_contas()
 		switch (opcao_menu)
 		{
 		case 1:
-			adicionar_conta();
+			adicionar_conta(cliente, nomePasta);
 			break;
 		case 2:
 			editar_conta();
@@ -40,7 +42,7 @@ void menu_contas()
 			apagar_conta();
 			break;
 		case 4:
-			pesquisar_conta();
+			pesquisar_conta(cliente);
 			break;
 		case 5:
 			//chamar a funcao para fazer logout

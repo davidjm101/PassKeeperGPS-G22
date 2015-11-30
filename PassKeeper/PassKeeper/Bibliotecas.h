@@ -3,5 +3,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdbool.h>
+#include <windows.h>
 #include"Estruturas_e_Prototipos.h"
+#include"dirent.h"
+
 

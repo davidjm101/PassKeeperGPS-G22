@@ -26,11 +26,6 @@ struct dados1
 	pconta lista; // ponteiro para o inicio da lista ligada de estruturas do tipo conta
 };
 
-
-
-
-
-
 ////////////////////   Protótipos das funções ////////////////////
 
 void menu();
@@ -39,10 +34,12 @@ void registo();
 bool verifica_master_guidelines(char *masterkey);
 int entradas_int(int controlo);
 void login();
-void menu_contas();
-void adicionar_conta();
+void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[]);
+void adicionar_conta(cliente *cliente, char nomePasta[]);
 void editar_conta();
 void apagar_conta();
-void pesquisar_conta();
-int cria_fich_bin(pcliente cliente);
-pcliente carrega_fich_bin();
+void pesquisar_conta(cliente *cliente);
+int cria_fich_bin(pcliente cliente, char nomePasta[]);
+pcliente carrega_fich_bin(char nomePasta[]);
+
+void escreve_ficheiro(cliente *cliente, char nomePasta[]);

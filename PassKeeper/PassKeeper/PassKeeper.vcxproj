@@ -84,6 +84,7 @@
     <ClCompile Include="Cria_fich_bin.c" />
     <ClCompile Include="Editar_Conta.c" />
     <ClCompile Include="entradas_int.c" />
+    <ClCompile Include="escreve_ficheiro.c" />
     <ClCompile Include="Login.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
@@ -95,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h" />
+    <ClInclude Include="dirent.h" />
     <ClInclude Include="Estruturas_e_Prototipos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

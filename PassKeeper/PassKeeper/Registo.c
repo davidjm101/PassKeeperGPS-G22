@@ -3,6 +3,7 @@
 void registo()
 {
 	cliente cliente;
+	char nomePasta[16];
 	bool verifica = false;
 	titulo();
 	printf("\n			Registo       \n\n");
@@ -76,13 +77,38 @@ void registo()
 		}
 	} while (verifica == false);
 	
+	do{
+		printf("\nIndique o nome da pasta onde sera guardado o ficheiro com as suas contas: ");
+		fflush(stdin);
+		gets(nomePasta);
+		// aaa
+		if (strlen(nomePasta) < 4 || strlen(nomePasta) > 16)
+		{
+			verifica = false;
+			printf("\nPasta está a exceder limite de caracteres\n");
+		}
+		else
+		{
+			verifica = true;
+		}
+	} while (verifica == false);
+	
+	//Parcela de código que cria pasta conforme o nome dado no nomePasta
+	int check = mkdir(nomePasta, NULL);
 
-	printf("\nIndique o nome da pasta onde sera guardado o ficheiro com as suas contas: ");
+	if (!check)
+		printf("Directory created\n");
+	else
+	{
+		printf("Unable to create directory\n");
+		exit(1);
+	}
 
-	printf("\nNome: %s",cliente.username);
-	printf("\nMaster: %s", cliente.masterkey);
-	printf("\nPerg: %s", cliente.perg_seguranca);
-	printf("\nNome: %s\n", cliente.resp_seguranca);
+	cria_fich_bin(&cliente, nomePasta);
+
+	printf("\n\tNome: %s",cliente.username);
+	printf("\n\tMaster: %s", cliente.masterkey);
+	printf("\n\tPerg: %s", cliente.perg_seguranca);
+	printf("\n\tNome: %s\n", cliente.resp_seguranca);
 	system("PAUSE");
-
 }

@@ -57,12 +57,18 @@
     <ClCompile Include="verifica_master_guidelines.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="escreve_ficheiro.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Estruturas_e_Prototipos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dirent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
