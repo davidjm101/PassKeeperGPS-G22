@@ -82,7 +82,9 @@
     <ClCompile Include="Apagar_Conta.c" />
     <ClCompile Include="Carrega_fich_bin.c" />
     <ClCompile Include="Cria_fich_bin.c" />
+    <ClCompile Include="Desencripta.c" />
     <ClCompile Include="Editar_Conta.c" />
+    <ClCompile Include="Encripta.c" />
     <ClCompile Include="entradas_int.c" />
     <ClCompile Include="escreve_ficheiro.c" />
     <ClCompile Include="Login.c" />
