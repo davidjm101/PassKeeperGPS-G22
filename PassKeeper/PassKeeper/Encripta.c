@@ -1,6 +1,6 @@
 #include"Bibliotecas.h"
 
-void encripta(char palavra[])
+void encripta(char palavra[]) // função recebe um ponteiro para um array de caracteres
 {
 	int num_chars = 0;
 	int i = 0;
@@ -19,20 +19,21 @@ void encripta(char palavra[])
 						   '@', 'G', '4', 'u', 'S', 'i', '+', 'H', '5', 'v', 'T', 'j', 
 						   '-', 'I', '6', 'w', 'U', 'k', '_', 'J', '7', 'x', 'V', 'l'};
 
-	num_chars = strlen(palavra);
+	num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
 
-	for (i = 0; i < num_chars; i++)
+	for (i = 0; i < num_chars; i++) // ciclo principal para percorrer o array recebido
 	{
-		for (j = 0; j < 72; j++)
+		for (j = 0; j < 72; j++) //ciclo secundário para percorrer o array "original" procurando o caractere
 		{
-			if (palavra[i] == original[j])
+			if (palavra[i] == original[j]) // se o caracter for encontrado então substitui pelo caracter correspondente
+											// no array "aletoria"
 			{
 				palavra[i] = aleatoria[j];
 				break;
 			}
 			else
 			{
-				if (palavra[i] == ' ')
+				if (palavra[i] == ' ') // se o caracter for espaço ignora e passa para o seguinte
 				{
 					break;
 				}
