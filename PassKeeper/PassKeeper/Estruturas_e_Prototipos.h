@@ -6,7 +6,7 @@
 #define MAX_NOME 51 // numero maximo de caracteres para o nome de uma conta
 #define MAX_PASS 17 // numero maximo de caracteres para a password de uma conta
 
-typedef struct dados2 conta, *pconta;
+typedef struct dados2 conta, *pconta; //pconta é um ponteiro para uma estrutura do tipo conta e conta é outro nome para struct dados2
 struct dados2
 {
 	char nome[MAX_NOME];
