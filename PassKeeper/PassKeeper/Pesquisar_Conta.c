@@ -2,28 +2,51 @@
 
 void pesquisar_conta(cliente *cliente1)
 {
-	char nome_conta[MAX_NOME]="";
-	int cont = 1;
+	int i;
+	int tam;
+	int flag;
+	int contador=0;
+	int contador_pesq = 0;
+	char nome_conta[MAX_NOME] = "";
 	conta *aux = cliente1->lista;
+	char j;
 
 	system("cls");
 	titulo();
-	// Ciclo para verificar se esta a ver bem as contas
-	while (aux != NULL)
-	{
-		printf("\n\t%d. %s\tlogin:%s  pass:%s", cont, aux->nome, aux->login, aux->password);
-		cont++;
-		aux = aux->prox;
-	}
-	printf("\n\n");
-	system("PAUSE");
-
-
-
-	/*titulo();
 	printf("\n			Pesquisar Conta       \n\n");
 	printf("Indique o nome da conta a pesquisar (Pode indicar apenas um prefixo do nome): ");
-	scanf(" %[^\n]", nome_conta);
-	printf("\nResultados");*/
-	//fazer um ciclo que apresenta os dados das contas que tenham aquele nome ou que começam por aquelas letras
+	fflush(stdin);
+	gets(nome_conta);
+	
+		for (i = 0; i < MAX_NOME; i++)
+		{
+			j = nome_conta[i];
+			if (j != '\0')
+				contador++;
+			else
+				break;
+		}
+	tam = contador;
+
+	while (aux != NULL)
+	{
+		flag = 0;
+		for (i = 0; i < tam; i++)
+		{
+			if (aux->nome[i] == nome_conta[i])
+				flag = 1;
+			else
+			{
+				flag = 0;
+				break;
+			}
+		}
+		if (flag == 1)
+		{
+			contador_pesq++;
+			printf("%d.\t%s\n", contador_pesq, aux->nome);
+		}
+		aux = aux->prox;
+	}
+	system("PAUSE");
 }
