@@ -44,7 +44,7 @@ void pesquisar_conta(cliente *cliente1)
 		if (flag == 1)
 		{
 			contador_pesq++;
-			printf("%d.\t%s\n", contador_pesq, aux->nome);
+			printf("%d.  Login:%s  Password:%s  Nome:%s\n", contador_pesq,aux->login,aux->password,aux->nome);
 		}
 		aux = aux->prox;
 	}

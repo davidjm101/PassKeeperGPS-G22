@@ -5,6 +5,7 @@ void menu(){
 	int opcao_menu,controlo;
 	do{
 			do{
+				system("cls");
 				titulo();
 				printf("\n					Bem Vindo       \n\n");
 				printf("1- Login\n");

@@ -7,19 +7,36 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	conta conta, *aux, *novo;
 	FILE *f = NULL;
 	bool existe = false;//variavel que serve para verificar se o nome da conta ja existe associado a outra conta
+	bool verifica = false; //para verificar se o login, nome e password tem os caracteres suficientes
 	aux = cliente1->lista;
 
 	system("cls");
 	titulo();
 	printf("\n					Adicionar Conta       \n\n");
-	printf("Indique o login: ");
-	fflush(stdin);
-	gets(conta.login);
+	
+	do
+	{
+		printf("Indique o login: ");
+		fflush(stdin);
+		gets(conta.login);
+		// verifica se o login tem entre os minimos e maximos caracteres pedidos
+		if (strlen(conta.login) < 1 || strlen(conta.login) > 100)
+		{
+			verifica = false;
+			printf("\nLogin nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 100 caracteres)!\n");
+		}
+		else
+		{
+			verifica = true;
+		}
+	} while (verifica == false);
+	
 	do
 	{
 		printf("\nIndique se pretende password (1-Manual   2-Automatica): ");
 		fflush(stdin);
 		controlo = scanf("%d", &opcao_menu);
+		//verifica que a opcao introduzido é um numero e nao um caracter
 		if (entradas_int(controlo) == 0)
 		{
 			controlo = 0;
@@ -33,9 +50,22 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 
 	if (opcao_menu == 1)
 	{
-		printf("\nIndique a password: ");
-		fflush(stdin);
-		gets(conta.password);
+		do{
+			printf("\nIndique a password: ");
+			fflush(stdin);
+			gets(conta.password);
+			// verifica se a password tem entre os minimos e maximos caracteres pedidos
+			if (strlen(conta.password) < 1 || strlen(conta.password) > 16)
+			{
+				verifica = false;
+				printf("\nPassword nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 16 caracteres)!\n");
+			}
+			else
+			{
+				verifica = true;
+			}
+		} while (verifica == false);
+		
 	}
 	else
 	{
@@ -46,9 +76,22 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	do
 	{
 		existe = false;
-		printf("\nIndique nome da conta: ");
-		fflush(stdin);
-		gets(conta.nome);
+		do{
+			printf("\nIndique nome da conta: ");
+			fflush(stdin);
+			gets(conta.nome);
+			// verifica se o nome tem entre os minimos e maximos caracteres pedidos
+			if (strlen(conta.nome) < 3 || strlen(conta.nome) > 100)
+			{
+				verifica = false;
+				printf("\nLNome nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 3 e 100 caracteres)!\n");
+			}
+			else
+			{
+				verifica = true;
+			}
+		} while (verifica == false);
+		
 
 		//ciclo que verifica se existe alguma conta ja com o mesmo nome
 		while (aux != NULL)

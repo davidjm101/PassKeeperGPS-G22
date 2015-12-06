@@ -36,7 +36,7 @@ int entradas_int(int controlo);
 void login();
 void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[]);
 void adicionar_conta(cliente *cliente, char nomePasta[]);
-void editar_conta();
+void editar_conta(cliente *cliente1, char nomePasta[]);
 void apagar_conta(cliente *cliente, char nomePasta[]);
 void pesquisar_conta(cliente *cliente);
 int cria_fich_bin(pcliente cliente, char nomePasta[]);
