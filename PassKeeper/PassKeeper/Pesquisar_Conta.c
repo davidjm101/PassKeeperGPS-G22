@@ -2,6 +2,7 @@
 
 void pesquisar_conta(cliente *cliente1)
 {
+	
 	int i;
 	int tam;
 	int flag;
@@ -9,8 +10,13 @@ void pesquisar_conta(cliente *cliente1)
 	int contador_pesq = 0;
 	char nome_conta[MAX_NOME] = "";
 	char array_aux[5];
+	char array_aux_copia[7];
+	char nomeCopiar[MAX_NOME];
 	conta *aux = cliente1->lista;
 	char j;
+	int numero;
+	char comando[10];
+	
 
 	system("cls");
 	titulo();
@@ -64,5 +70,25 @@ void pesquisar_conta(cliente *cliente1)
 				aux = aux->prox;
 			}
 		}
-		system("PAUSE");
+
+		printf("Copiar(Password)/Sair (indique o comando que pertende) : ");
+		fflush(stdin);
+		scanf("%s", &comando);
+		for (i = 0; i < 7; i++)
+		{
+			array_aux_copia[i] = tolower(comando[i]);
+		}
+		if (strcmp(array_aux_copia, "copiar") == 0)
+		{
+			printf("Insira o nome da conta para copiar a password : ");
+			scanf("%s", &nomeCopiar);
+			ShortcutCopiar(cliente1, nomeCopiar);
+		}
+		if (strcmp(array_aux_copia, "sair") == 0)
+		{
+			return;
+		}
+		
 	}
+
+
