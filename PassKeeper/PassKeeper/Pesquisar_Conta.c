@@ -28,16 +28,18 @@ void pesquisar_conta(cliente *cliente1)
 		for (i = 0; i < MAX_NOME; i++)
 		{
 			j = nome_conta[i];
-			if (i<5)
-			array_aux[i] = nome_conta[i];
 			if (j != '\0')
 				contador++;
 			else
 				break;
 		}
 		tam = contador;
+		for (i = 0; i < 5; i++)
+		{
+			array_aux[i] = tolower(nome_conta[i]);
+		}
 		
-		if (strcmp(nome_conta, "tudo") == 0)
+		if (strcmp(array_aux, "tudo") == 0)
 		{
 			while (aux != NULL)
 			{
