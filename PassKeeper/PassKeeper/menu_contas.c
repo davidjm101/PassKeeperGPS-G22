@@ -45,7 +45,7 @@ void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 			pesquisar_conta(cliente);
 			break;
 		case 5:
-			//chamar a funcao para fazer logout
+			return;
 			break;
 		default:
 			break;

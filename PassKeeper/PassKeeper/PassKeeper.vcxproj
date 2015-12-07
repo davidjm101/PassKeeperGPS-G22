@@ -90,6 +90,7 @@
     <ClCompile Include="Gera_Pass_Auto.c" />
     <ClCompile Include="Login.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="manual_instrucao.c" />
     <ClCompile Include="menu.c" />
     <ClCompile Include="menu_contas.c" />
     <ClCompile Include="Pesquisar_Conta.c" />

@@ -86,7 +86,7 @@ void registo()
 		if (strlen(nomePasta) < 4 || strlen(nomePasta) > 16)
 		{
 			verifica = false;
-			printf("\nPasta está a exceder limite de caracteres\n");
+			printf("\nNome da pasta nao tem caracteres suficientes ou tem caracteres a mais!\n");
 		}
 		else
 		{

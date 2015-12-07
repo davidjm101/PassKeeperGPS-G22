@@ -69,6 +69,9 @@
     <ClCompile Include="Gera_Pass_Auto.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="manual_instrucao.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">

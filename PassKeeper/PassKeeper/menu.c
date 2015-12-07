@@ -26,7 +26,7 @@ void menu(){
 				{
 					controlo = 1;
 				}
-			} while (controlo<1 || opcao_menu<1 || opcao_menu>4);
+			} while (controlo<1 || opcao_menu<1 || opcao_menu>5);
 
 
 			switch (opcao_menu)
@@ -41,10 +41,12 @@ void menu(){
 				//chamar a funcao de recuperar masterkey
 				break;
 			case 4:
-				//chamar a funcao do manual
+				manual_intrucao();
 				break;
 			case 5:
-				system(exit);  //Forcar saida do programa
+				printf("O programa vai encerar!");
+				exit(0);  //Forcar saida do programa
+				break;
 			default:
 				break;
 			}
