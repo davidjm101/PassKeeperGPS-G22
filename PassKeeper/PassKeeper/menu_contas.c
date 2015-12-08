@@ -45,8 +45,7 @@ void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 			pesquisar_conta(cliente);
 			break;
 		case 5:
-			exit(0);
-			system("cls");
+			return;
 			break;
 		default:
 			break;

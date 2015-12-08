@@ -73,6 +73,11 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShortcutColar.c">
+    	<Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="manual_instrucao.c">
+	<Filter>Source Files</Filter>
+    </ClCompile>
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

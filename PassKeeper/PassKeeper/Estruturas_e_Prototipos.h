@@ -29,6 +29,7 @@ struct dados1
 ////////////////////   Protótipos das funções ////////////////////
 
 void menu();
+void manual_intrucao();
 void titulo();
 void registo();
 bool verifica_master_guidelines(char *masterkey);
