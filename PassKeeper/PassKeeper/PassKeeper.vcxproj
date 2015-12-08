@@ -94,6 +94,8 @@
     <ClCompile Include="menu_contas.c" />
     <ClCompile Include="Pesquisar_Conta.c" />
     <ClCompile Include="Registo.c" />
+    <ClCompile Include="Shortcut.c" />
+    <ClCompile Include="ShortcutColar.c" />
     <ClCompile Include="titulo.c" />
     <ClCompile Include="verifica_master_guidelines.c" />
   </ItemGroup>

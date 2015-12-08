@@ -95,7 +95,7 @@ void registo()
 	} while (verifica == false);
 	
 	//Parcela de código que cria pasta conforme o nome dado no nomePasta
-	int check = mkdir(nomePasta, NULL);
+	int check = _mkdir(nomePasta, NULL);
 
 	if (!check)
 		printf("Directory created\n");

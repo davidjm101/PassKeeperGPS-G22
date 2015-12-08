@@ -69,6 +69,12 @@
     <ClCompile Include="Gera_Pass_Auto.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Shortcut.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutColar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">
