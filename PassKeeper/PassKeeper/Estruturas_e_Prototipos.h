@@ -42,5 +42,7 @@ void pesquisar_conta(cliente *cliente);
 int cria_fich_bin(pcliente cliente, char nomePasta[]);
 pcliente carrega_fich_bin(char nomePasta[]);
 
+
+void ShortcutCopiar(cliente *cliente1, char nomeConta[]);
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);
 void gera_pass_auto(char password[]);

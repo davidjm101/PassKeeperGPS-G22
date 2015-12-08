@@ -7,5 +7,6 @@
 #include"Estruturas_e_Prototipos.h"
 #include"dirent.h"
 #include<time.h>
+#include <direct.h>
 
 
