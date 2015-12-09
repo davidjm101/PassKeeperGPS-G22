@@ -9,7 +9,7 @@ void teste_string(CuTest* tc)
 	minusculas(s);
 	CuString* str = CuStringNew();
 
-	CuAssertStrEquals(tc, "tudo", "Tudo");
+	CuAssertStrEquals(tc, "tudo", s);
 
 
 	CuAssertIntEquals(tc, 11, 11);
