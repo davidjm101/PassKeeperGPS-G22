@@ -70,6 +70,15 @@
     <ClCompile Include="Exception_Encriptacao.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="minusculas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CuTest.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Testes.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h">
@@ -79,6 +88,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Estruturas_e_Prototipos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CuTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

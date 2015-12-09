@@ -45,7 +45,7 @@ void editar_conta(cliente *cliente1, char nomePasta[]);
 void apagar_conta(cliente *cliente, char nomePasta[]);
 void pesquisar_conta(cliente *cliente);
 int cria_fich_bin(pcliente cliente, char nomePasta[]);
-
+void minusculas(char palavra[]);
 pcliente carrega_fich_bin(char nomePasta[]);
 char* ShortcutColar();
 
@@ -53,3 +53,13 @@ void ShortcutCopiar(cliente *cliente1, char nomeConta[]);
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);
 void gera_pass_auto(char password[]);
 void trata_exception(int a);
+
+
+
+//funcoes de testes
+//void teste_string(CuTest* tc);
+//void teste_string2(CuTest* tc);
+//void teste_string3(CuTest* tc);
+//CuSuite* CuStringGetSuite(void);
+//void run_alltest(void);
+

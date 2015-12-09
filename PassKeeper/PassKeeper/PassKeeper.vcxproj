@@ -82,6 +82,7 @@
     <ClCompile Include="Apagar_Conta.c" />
     <ClCompile Include="Carrega_fich_bin.c" />
     <ClCompile Include="Cria_fich_bin.c" />
+    <ClCompile Include="CuTest.c" />
     <ClCompile Include="Desencripta.c" />
     <ClCompile Include="Editar_Conta.c" />
     <ClCompile Include="Encripta.c" />
@@ -94,16 +95,19 @@
     <ClCompile Include="manual_instrucao.c" />
     <ClCompile Include="menu.c" />
     <ClCompile Include="menu_contas.c" />
+    <ClCompile Include="minusculas.c" />
     <ClCompile Include="Pesquisar_Conta.c" />
     <ClCompile Include="recupera_MasterKey.c" />
     <ClCompile Include="Registo.c" />
     <ClCompile Include="Shortcut.c" />
     <ClCompile Include="ShortcutColar.c" />
+    <ClCompile Include="Testes.c" />
     <ClCompile Include="titulo.c" />
     <ClCompile Include="verifica_master_guidelines.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bibliotecas.h" />
+    <ClInclude Include="CuTest.h" />
     <ClInclude Include="dirent.h" />
     <ClInclude Include="Estruturas_e_Prototipos.h" />
   </ItemGroup>
