@@ -19,9 +19,9 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	{
 		printf("Indique o login: ");
 		fflush(stdin);
-		gets(conta.login);
+		fgets(conta.login, MAX_LOG, stdin);
 		// verifica se o login tem entre os minimos e maximos caracteres pedidos
-		if (strlen(conta.login) < 1 || strlen(conta.login) > 100)
+		if (strlen(conta.login) < 1 || strlen(conta.login) > MAX_LOG)
 		{
 			verifica = false;
 			printf("\nLogin nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 100 caracteres)!\n");
@@ -54,9 +54,9 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		do{
 			printf("\nIndique a password: ");
 			fflush(stdin);
-			gets(conta.password);
+			fgets(conta.password, MAX_PASS, stdin);
 			// verifica se a password tem entre os minimos e maximos caracteres pedidos
-			if (strlen(conta.password) < 1 || strlen(conta.password) > 16)
+			if (strlen(conta.password) < 1 || strlen(conta.password) > MAX_PASS)
 			{
 				verifica = false;
 				printf("\nPassword nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 16 caracteres)!\n");
@@ -86,9 +86,9 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		do{
 			printf("\nIndique nome da conta (nome 'tudo' e invalido): ");
 			fflush(stdin);
-			gets(conta.nome);
+			fgets(conta.nome, MAX_NOME, stdin);
 			// verifica se o nome tem entre os minimos e maximos caracteres pedidos
-			if (strlen(conta.nome) < 3 || strlen(conta.nome) > 100)
+			if (strlen(conta.nome) < 3 || strlen(conta.nome) > MAX_NOME)
 			{
 				verifica = false;
 				printf("\nLNome nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 3 e 100 caracteres)!\n");
@@ -146,21 +146,8 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		aux->prox = novo;
 		cliente1->num_contas++;
 	}
-	//cliente1->lista = aux;
 
 	escreve_ficheiro(cliente1, nomePasta);
-
-	//strcat(nomePasta, "/.bin");
-	//f = fopen(nomePasta, "wb"); // cria ficheiro
-
-	//if (f == NULL) // verifica se o ficheiro foi criado com sucesso
-	//{
-	//	printf("\nErro! Ficheiro não foi criado com sucesso!\n");
-	//	system("PAUSE");
-	//	return 0;
-	//}
-
-	//fwrite(cliente1, sizeof(pcliente), 1, f);
 
 	printf("\nConta adicionada!!");
 	printf("\nLogin %s", conta.login);
@@ -168,6 +155,4 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	printf("\nNome %s", conta.nome);
 	system("PAUSE");
 
-	//fwrite()
-	//adicionar a struct a lista ligada
 }

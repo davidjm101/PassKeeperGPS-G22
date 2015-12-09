@@ -19,22 +19,33 @@ void desencripta(char palavra[]) // função recebe um ponteiro para um array de c
 						   '@', 'G', '4', 'u', 'S', 'i', '+', 'H', '5', 'v', 'T', 'j',
 						   '-', 'I', '6', 'w', 'U', 'k', '_', 'J', '7', 'x', 'V', 'l' };
 
-	num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
-
-	for (i = 0; i < num_chars; i++) // ciclo principal para percorrer o array recebido
+	if (palavra == NULL)
 	{
-		for (j = 0; j < 72; j++) //ciclo secundário para percorrer o array "aleatoria" procurando o caractere
+		trata_exception(2);
+		return;
+	}
+	else{
+		num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
+		if (num_chars == 0)
 		{
-			if (palavra[i] == aleatoria[j]) // se o caracter for encontrado então substitui pelo caracter correspondente
-			{								// no array "original"
-				palavra[i] = original[j];
-				break;
-			}
-			else
+			trata_exception(2);
+			return;
+		}
+		for (i = 0; i < num_chars; i++) // ciclo principal para percorrer o array recebido
+		{
+			for (j = 0; j < 72; j++) //ciclo secundário para percorrer o array "aleatoria" procurando o caractere
 			{
-				if (palavra[i] == ' ') // se o caracter for espaço ignora e passa para o seguinte
-				{
+				if (palavra[i] == aleatoria[j]) // se o caracter for encontrado então substitui pelo caracter correspondente
+				{								// no array "original"
+					palavra[i] = original[j];
 					break;
+				}
+				else
+				{
+					if (palavra[i] == ' ') // se o caracter for espaço ignora e passa para o seguinte
+					{
+						break;
+					}
 				}
 			}
 		}

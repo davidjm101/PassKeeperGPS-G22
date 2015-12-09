@@ -12,7 +12,7 @@ void apagar_conta(cliente *cliente1, char nomePasta[])
 	printf("\n			Apagar Conta       \n\n");
 	printf("indique o nome da conta a apagar: ");
 	fflush(stdin);
-	gets(nome_conta);
+	fgets(nome_conta, MAX_NOME, stdin);
 
 	do{
 		printf("\nPretende mesmo apagar a conta (1-Sim  2-Nao): ");

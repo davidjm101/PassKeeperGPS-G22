@@ -5,6 +5,7 @@ void encripta(char palavra[]) // função recebe um ponteiro para um array de cara
 	int num_chars = 0;
 	int i = 0;
 	int j = 0;
+
 	char original[72] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 
 						  'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
 						  'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
@@ -19,23 +20,36 @@ void encripta(char palavra[]) // função recebe um ponteiro para um array de cara
 						   '@', 'G', '4', 'u', 'S', 'i', '+', 'H', '5', 'v', 'T', 'j', 
 						   '-', 'I', '6', 'w', 'U', 'k', '_', 'J', '7', 'x', 'V', 'l'};
 
-	num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
-
-	for (i = 0; i < num_chars; i++) // ciclo principal para percorrer o array recebido
+	if (palavra == NULL)
 	{
-		for (j = 0; j < 72; j++) //ciclo secundário para percorrer o array "original" procurando o caractere
+		trata_exception(1);
+		return;
+	}
+	else{
+		num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
+		if (num_chars == 0)
 		{
-			if (palavra[i] == original[j]) // se o caracter for encontrado então substitui pelo caracter correspondente
-											// no array "aletoria"
+			trata_exception(1);
+			return;
+		}
+		for (i = 0; i < num_chars; i++) // ciclo principal para percorrer o array recebido
+		{
+			for (j = 0; j < 72; j++) //ciclo secundário para percorrer o array "original" procurando o caractere
 			{
-				palavra[i] = aleatoria[j];
-				break;
-			}
-			else
-			{
-				if (palavra[i] == ' ') // se o caracter for espaço ignora e passa para o seguinte
+				if (palavra[i] == original[j]) // se o caracter for encontrado então substitui pelo caracter correspondente
+					// no array "aletoria"
 				{
+					palavra[i] = aleatoria[j];
 					break;
+				}
+				else
+				{
+					if (palavra[i] == ' ') // se o caracter for espaço ignora e passa para o seguinte
+					{
+						palavra[i] = '_';
+						j--;
+						break;
+					}
 				}
 			}
 		}

@@ -6,6 +6,9 @@
 #define MAX_NOME 51 // numero maximo de caracteres para o nome de uma conta
 #define MAX_PASS 17 // numero maximo de caracteres para a password de uma conta
 
+int exception_encripta = 0;
+int exception_desencripta = 0;
+
 typedef struct dados2 conta, *pconta; //pconta é um ponteiro para uma estrutura do tipo conta e conta é outro nome para struct dados2
 struct dados2
 {
@@ -49,3 +52,4 @@ char* ShortcutColar();
 void ShortcutCopiar(cliente *cliente1, char nomeConta[]);
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);
 void gera_pass_auto(char password[]);
+void trata_exception(int a);

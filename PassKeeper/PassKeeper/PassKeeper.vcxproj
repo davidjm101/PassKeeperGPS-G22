@@ -87,6 +87,7 @@
     <ClCompile Include="Encripta.c" />
     <ClCompile Include="entradas_int.c" />
     <ClCompile Include="escreve_ficheiro.c" />
+    <ClCompile Include="Exception_Encriptacao.c" />
     <ClCompile Include="Gera_Pass_Auto.c" />
     <ClCompile Include="Login.c" />
     <ClCompile Include="main.c" />

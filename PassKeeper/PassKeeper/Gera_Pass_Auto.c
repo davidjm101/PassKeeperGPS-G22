@@ -1,4 +1,5 @@
 #include "Bibliotecas.h"
+
 void gera_pass_auto(char password[])
 {
 	int i = 0;

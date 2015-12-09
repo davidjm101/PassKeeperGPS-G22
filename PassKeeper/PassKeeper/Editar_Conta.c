@@ -18,7 +18,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 	printf("\n			Editar Conta       \n\n");
 	printf("Indique o nome da conta a editar: ");
 	fflush(stdin);
-	gets(nome_conta);
+	fgets(nome_conta, MAX_NOME, stdin);
 
 	//ciclo que verifica se existe algum conta com o nome indicado pelo utilizador
 	while (aux != NULL)
@@ -66,9 +66,9 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 			{
 				printf("Indique o novo login: ");
 				fflush(stdin);
-				gets(le_dado);
+				fgets(le_dado, MAX_LOG, stdin);
 				// verifica se o login tem entre os minimos e maximos caracteres pedidos
-				if (strlen(le_dado) < 1 || strlen(le_dado) > 100)
+				if (strlen(le_dado) < 1 || strlen(le_dado) > MAX_LOG)
 				{
 					verifica = false;
 					printf("\nLogin nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 100 caracteres)!\n");
@@ -82,6 +82,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 			
 			printf("Pretende alterar mesmo o login para %s (1-Sim 2-Nao):", le_dado);
 			do{
+				fflush(stdin);
 				controlo = scanf("%d", &opcao_menu);
 				//verifica que a opcao introduzido é um numero e nao um caracter
 				if (entradas_int(controlo) == 0)
@@ -131,7 +132,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 				{
 					printf("Introduza a nova password: ");
 					fflush(stdin);
-					gets(password);
+					fgets(password, MAX_PASS, stdin);
 					// verifica se a password tem entre os minimos e maximos caracteres pedidos
 					if (strlen(password) < 1 || strlen(password) > 16)
 					{
@@ -182,9 +183,9 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 			do{
 				printf("Indique o novo nome: ");
 				fflush(stdin);
-				gets(le_dado);
+				fgets(le_dado, MAX_NOME, stdin);
 				// verifica se o nome tem entre os minimos e maximos caracteres pedidos
-				if (strlen(le_dado) < 3|| strlen(le_dado) > 100)
+				if (strlen(le_dado) < 3|| strlen(le_dado) > MAX_NOME)
 				{
 					verifica = false;
 					printf("\nLNome nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 3 e 100 caracteres)!\n");
@@ -198,6 +199,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 	
 			printf("Pretende alterar mesmo o nome para %s (1-Sim 2-Nao):", le_dado);
 			do{
+				fflush(stdin);
 				controlo = scanf("%d", &opcao_menu);
 				//verifica que a opcao introduzido é um numero e nao um caracter
 				if (entradas_int(controlo) == 0)
