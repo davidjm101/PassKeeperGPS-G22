@@ -1,86 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="menu.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="titulo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="entradas_int.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Login.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="menu_contas.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Adicionar_Conta.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Editar_Conta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Apagar_Conta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pesquisar_Conta.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Registo.c">
+    <ClCompile Include="Carrega_fich_bin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cria_fich_bin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Carrega_fich_bin.c">
+    <ClCompile Include="Desencripta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="verifica_master_guidelines.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="escreve_ficheiro.c">
+    <ClCompile Include="Editar_Conta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Encripta.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Desencripta.c">
+    <ClCompile Include="entradas_int.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="escreve_ficheiro.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Gera_Pass_Auto.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Login.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="manual_instrucao.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menu_contas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pesquisar_Conta.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="recupera_MasterKey.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Registo.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Shortcut.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShortcutColar.c">
-    	<Filter>Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="manual_instrucao.c">
-	<Filter>Source Files</Filter>
+    <ClCompile Include="titulo.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="recupera_MasterKey.c" />
-	<Filter>Source Files</Filter>
-    </ClCompile>
+    <ClCompile Include="verifica_master_guidelines.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,11 +72,22 @@
     <ClInclude Include="Bibliotecas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Estruturas_e_Prototipos.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="dirent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Estruturas_e_Prototipos.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{e3c4aee1-2535-45eb-9a4c-7b408692043c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6115506b-4e1f-4980-8712-57ab7ef4fa9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{46f714ef-9c7f-44ad-92da-06f2026e9057}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
