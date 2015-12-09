@@ -21,14 +21,14 @@ void desencripta(char palavra[]) // função recebe um ponteiro para um array de c
 
 	if (palavra == NULL)
 	{
-		trata_exception(2);
+		//trata_exception(2);
 		return;
 	}
 	else{
 		num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
 		if (num_chars == 0)
 		{
-			trata_exception(2);
+			//trata_exception(2);
 			return;
 		}
 		for (i = 0; i < num_chars; i++) // ciclo principal para percorrer o array recebido

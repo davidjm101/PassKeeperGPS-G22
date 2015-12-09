@@ -5,11 +5,11 @@ CuSuite* CuStringGetSuite(CuTest* tc);
 void teste_string(CuTest* tc)
 {
 
-	char s[] = "TUDO";
-	minusculas(s);
+	char s[] = " ";
+	minusculas(NULL);
 	CuString* str = CuStringNew();
 
-	CuAssertStrEquals(tc, "tudo", s);
+	CuAssertStrEquals(tc, "x ?", s);
 
 
 	CuAssertIntEquals(tc, 11, 11);
