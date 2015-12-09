@@ -34,12 +34,13 @@ void pesquisar_conta(cliente *cliente1)
 				break;
 		}
 		tam = contador;
-		for (i = 0; i < 5; i++)
+		minusculas(nome_conta);
+		/*for (i = 0; i < 5; i++)
 		{
 			array_aux[i] = tolower(nome_conta[i]);
-		}
+		}*/
 		
-		if (strcmp(array_aux, "tudo") == 0)
+		if (strcmp(nome_conta, "tudo") == 0)
 		{
 			while (aux != NULL)
 			{
@@ -76,17 +77,18 @@ void pesquisar_conta(cliente *cliente1)
 		printf("Copiar(Password)/Sair (indique o comando que pertende) : ");
 		fflush(stdin);
 		scanf("%s", &comando);
-		for (i = 0; i < 7; i++)
+		/*for (i = 0; i < 7; i++)
 		{
 			array_aux_copia[i] = tolower(comando[i]);
-		}
-		if (strcmp(array_aux_copia, "copiar") == 0)
+		}*/
+		minusculas(comando);
+		if (strcmp(comando, "copiar") == 0)
 		{
 			printf("Insira o nome da conta para copiar a password : ");
 			scanf("%s", &nomeCopiar);
 			ShortcutCopiar(cliente1, nomeCopiar);
 		}
-		if (strcmp(array_aux_copia, "sair") == 0)
+		if (strcmp(comando, "sair") == 0)
 		{
 			return;
 		}

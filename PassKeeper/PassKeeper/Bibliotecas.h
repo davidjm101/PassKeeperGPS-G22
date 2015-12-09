@@ -6,6 +6,7 @@
 #include <windows.h>
 #include"Estruturas_e_Prototipos.h"
 #include"dirent.h"
+#include "CuTest.h"
 #include<time.h>
 #include <direct.h>
 
