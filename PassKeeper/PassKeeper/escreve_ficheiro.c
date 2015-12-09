@@ -24,5 +24,7 @@ void escreve_ficheiro(cliente *cliente, char nomePasta[]){
 		aux = aux->prox;
 	}
 
+	printf("\n");
+
 	fclose(f);
 }

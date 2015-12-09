@@ -38,13 +38,14 @@ void menu(){
 				registo();
 				break;
 			case 3:
+				recupera_MasterKey();
 				//chamar a funcao de recuperar masterkey
 				break;
 			case 4:
 				manual_intrucao();
 				break;
 			case 5:
-				printf("O programa vai encerar!");
+				printf("O programa vai encerrar!");
 				exit(0);  //Forcar saida do programa
 				break;
 			default:

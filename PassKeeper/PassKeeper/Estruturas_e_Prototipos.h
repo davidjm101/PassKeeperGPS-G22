@@ -29,6 +29,7 @@ struct dados1
 ////////////////////   Protótipos das funções ////////////////////
 
 void menu();
+void recupera_MasterKey();
 void manual_intrucao();
 void titulo();
 void registo();
@@ -41,8 +42,9 @@ void editar_conta(cliente *cliente1, char nomePasta[]);
 void apagar_conta(cliente *cliente, char nomePasta[]);
 void pesquisar_conta(cliente *cliente);
 int cria_fich_bin(pcliente cliente, char nomePasta[]);
-pcliente carrega_fich_bin(char nomePasta[]);
 
+pcliente carrega_fich_bin(char nomePasta[]);
+char* ShortcutColar();
 
 void ShortcutCopiar(cliente *cliente1, char nomeConta[]);
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);

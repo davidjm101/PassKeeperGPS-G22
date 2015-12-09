@@ -78,6 +78,9 @@
     <ClCompile Include="manual_instrucao.c">
 	<Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="recupera_MasterKey.c" />
+	<Filter>Source Files</Filter>
+    </ClCompile>
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

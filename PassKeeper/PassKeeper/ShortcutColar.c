@@ -1,27 +1,23 @@
 #include "Bibliotecas.h"
 
-void ShortcutColar()
+void BailOut(char *msg)
 {
-	HGLOBAL   hglb;
-	LPTSTR    lptstr;
-	HWND hwnd;
+	fprintf(stderr, "Exiting: %s\n", msg);
+	exit(1);
+}
+char* ShortcutColar(){ 
 
+	HANDLE h;
 
-		if (!IsClipboardFormatAvailable(CF_TEXT)) return GetLastError();
-		if (!OpenClipboard(NULL)) return GetLastError();
+	if (!OpenClipboard(NULL))
+		BailOut("Can't open clipboard");
 
-		hglb = GetClipboardData(CF_TEXT);
-		if (hglb != NULL)
-		{
-			lptstr = GlobalLock(hglb);
-			if (lptstr != NULL)
-			{
-				ReplaceSelection(hwnd, lptstr);
-				GlobalUnlock(hglb);
-			}
-		}
-		CloseClipboard();
+	h = GetClipboardData(CF_TEXT);
 
-		return ;
+	//printf("%s\n", (char *)h);
+
+	CloseClipboard();
+
+	return h;
 }
 

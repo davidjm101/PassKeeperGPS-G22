@@ -2,6 +2,7 @@
 
 void adicionar_conta(cliente *cliente1, char nomePasta[])
 {
+	char opcao[10];
 	int opcao_menu = 0;
 	int controlo = 0;
 	conta conta, *aux, *novo;
@@ -33,7 +34,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	
 	do
 	{
-		printf("\nIndique se pretende password (1-Manual   2-Automatica): ");
+		printf("\nIndique se pretende password (1-Manual   2-Automatica  3-Colar): ");
 		fflush(stdin);
 		controlo = scanf("%d", &opcao_menu);
 		//verifica que a opcao introduzido é um numero e nao um caracter
@@ -46,7 +47,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		{
 			controlo = 1;
 		}
-	} while (controlo < 1 || opcao_menu < 1 || opcao_menu>2);
+	} while (controlo < 1 || opcao_menu < 1 || opcao_menu > 3);
 
 	if (opcao_menu == 1)
 	{
@@ -67,17 +68,23 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		} while (verifica == false);
 		
 	}
-	else
+	else if (opcao_menu==2)
 	{
 		gera_pass_auto(conta.password);
 		printf("Password gerada com sucesso");
+	}
+	else
+	{
+		char *h = ShortcutColar();
+		printf("Password utilizada\t%s", h);
+		strcpy(conta.password, h);
 	}
 
 	do
 	{
 		existe = false;
 		do{
-			printf("\nIndique nome da conta: ");
+			printf("\nIndique nome da conta (nome 'tudo' e invalido): ");
 			fflush(stdin);
 			gets(conta.nome);
 			// verifica se o nome tem entre os minimos e maximos caracteres pedidos
@@ -96,7 +103,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		//ciclo que verifica se existe alguma conta ja com o mesmo nome
 		while (aux != NULL)
 		{
-			if (strcmp(conta.nome, aux->nome) == 0)
+			if (strcmp(conta.nome, aux->nome) == 0 || strcmp(tolower(conta.nome), "tudo") == 0)
 			{
 				existe = true;
 				break;
@@ -110,7 +117,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 
 		if (existe==true)
 		{
-			printf("\nExiste uma conta ja com esse nome, escolha outro nome de conta!");
+			printf("\nNome de conta existente ou inválido, tente novamente");
 		}
 	} while (existe==true);
 	
