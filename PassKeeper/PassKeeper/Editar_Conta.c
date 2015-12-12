@@ -19,6 +19,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 	printf("Indique o nome da conta a editar: ");
 	fflush(stdin);
 	fgets(nome_conta, MAX_NOME, stdin);
+	strtok(nome_conta, "\n");
 
 	//ciclo que verifica se existe algum conta com o nome indicado pelo utilizador
 	while (aux != NULL)
@@ -67,6 +68,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 				printf("Indique o novo login: ");
 				fflush(stdin);
 				fgets(le_dado, MAX_LOG, stdin);
+				strtok(le_dado, "\n");
 				// verifica se o login tem entre os minimos e maximos caracteres pedidos
 				if (strlen(le_dado) < 1 || strlen(le_dado) > MAX_LOG)
 				{
@@ -133,6 +135,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 					printf("Introduza a nova password: ");
 					fflush(stdin);
 					fgets(password, MAX_PASS, stdin);
+					strtok(password, "\n");
 					// verifica se a password tem entre os minimos e maximos caracteres pedidos
 					if (strlen(password) < 1 || strlen(password) > 16)
 					{
@@ -184,6 +187,7 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 				printf("Indique o novo nome: ");
 				fflush(stdin);
 				fgets(le_dado, MAX_NOME, stdin);
+				strtok(le_dado, "\n");
 				// verifica se o nome tem entre os minimos e maximos caracteres pedidos
 				if (strlen(le_dado) < 3|| strlen(le_dado) > MAX_NOME)
 				{

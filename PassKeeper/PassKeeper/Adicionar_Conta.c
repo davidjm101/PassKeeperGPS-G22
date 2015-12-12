@@ -20,6 +20,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		printf("Indique o login: ");
 		fflush(stdin);
 		fgets(conta.login, MAX_LOG, stdin);
+		strtok(conta.login, "\n");
 		// verifica se o login tem entre os minimos e maximos caracteres pedidos
 		if (strlen(conta.login) < 1 || strlen(conta.login) > MAX_LOG)
 		{
@@ -55,6 +56,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 			printf("\nIndique a password: ");
 			fflush(stdin);
 			fgets(conta.password, MAX_PASS, stdin);
+			strtok(conta.password, "\n");
 			// verifica se a password tem entre os minimos e maximos caracteres pedidos
 			if (strlen(conta.password) < 1 || strlen(conta.password) > MAX_PASS)
 			{
@@ -87,6 +89,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 			printf("\nIndique nome da conta (nome 'tudo' e invalido): ");
 			fflush(stdin);
 			fgets(conta.nome, MAX_NOME, stdin);
+			strtok(conta.nome, "\n");
 			// verifica se o nome tem entre os minimos e maximos caracteres pedidos
 			if (strlen(conta.nome) < 3 || strlen(conta.nome) > MAX_NOME)
 			{

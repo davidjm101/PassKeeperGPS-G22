@@ -52,7 +52,7 @@ char* ShortcutColar();
 void ShortcutCopiar(cliente *cliente1, char nomeConta[]);
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);
 void gera_pass_auto(char password[]);
-//void trata_exception(int a);
+
 
 
 

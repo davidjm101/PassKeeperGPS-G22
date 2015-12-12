@@ -18,9 +18,11 @@ void login()
 		printf("Introduza o seu username: ");
 		fflush(stdin);
 		fgets(username, MAX_USER, stdin);
+		strtok(username, "\n");
 		printf("\nIntroduza a sua MasterKey: ");
 		fflush(stdin);
 		fgets(masterkey, MAX_MK, stdin);
+		strtok(masterkey, "\n");
 		//chamar a funcao que vai verificar se o username e login estao bem, e retornar um boolean true se estiver tudo certo
 	} while (verifica==true);
 
