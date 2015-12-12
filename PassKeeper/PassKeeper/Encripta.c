@@ -22,7 +22,7 @@ void encripta(char palavra[]) // função recebe um ponteiro para um array de cara
 
 	if (palavra == NULL)
 	{
-		//trata_exception(1);
+		strcpy(palavra, "erro");
 		return;
 	}
 	else{

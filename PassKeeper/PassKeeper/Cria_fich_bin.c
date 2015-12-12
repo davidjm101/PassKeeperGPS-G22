@@ -25,6 +25,12 @@ int cria_fich_bin(cliente *cliente, char nomePasta[])
 
 	cliente->num_contas = 0;
 	cliente->lista = NULL;
+	// encriptação dos dados para escrita
+	encripta(cliente->username);
+	encripta(cliente->masterkey);
+	encripta(cliente->perg_seguranca);
+	encripta(cliente->resp_seguranca);
+	//escreve dados no ficheiro binário
 	fwrite(cliente, sizeof(*cliente), 1, f); // escreve no ficheiro binário a informação relativa ao cliente (utilizador) (login, masterkey, pergunta secreta, etc)
 	
 	//cliente->lista = malloc(sizeof(conta));

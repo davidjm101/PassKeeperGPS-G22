@@ -22,7 +22,13 @@ pcliente carrega_fich_bin(char nomePasta[])
 	cliente = malloc(sizeof(*cliente)); // aloca espaço em memória para uma estrutura do tipo cliente
 
 	fread(cliente, sizeof(*cliente), 1, f); // lê uma estrutura do ficheiro binário
-
+	
+	//desencriptação dos dados do ficheiro
+	desencripta(cliente->username);
+	desencripta(cliente->masterkey);
+	desencripta(cliente->perg_seguranca);
+	desencripta(cliente->resp_seguranca);
+	//
 	cliente->lista = malloc(sizeof(conta)); // aloca espaço em memória para uma estrutura do tipo conta e esse espaço fica apontado pelo ponteiro lista
 											// corresponde ao primeiro elemento da lista
 	if (fread(cliente->lista, sizeof(conta), 1, f) == 0){
@@ -31,7 +37,11 @@ pcliente carrega_fich_bin(char nomePasta[])
 	else
 	{
 			aux = cliente->lista;
+			desencripta(aux->login);
+			desencripta(aux->nome);
+			desencripta(aux->password);
 	}
+	
 
 	//if (fread(cliente->lista, sizeof(conta), 1, f) == NULL) // lê uma estrutura do ficheiro binário
 	//{
@@ -51,6 +61,10 @@ pcliente carrega_fich_bin(char nomePasta[])
 	{
 		novo = malloc(sizeof(conta)); // aloca espaço para uma nova conta
 		fread(novo, sizeof(conta), 1, f); // lê do ficheiro binário
+		//desencripta os dados
+		desencripta(novo->login);
+		desencripta(novo->nome);
+		desencripta(novo->password);
 		aux->prox = novo; // ponteiro prox do elemento anterior fica a apontar para o novo elemento
 		aux = novo; // ponteiro aux(ultimo elemento da lista) é actualizado
 	}

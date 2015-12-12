@@ -21,7 +21,7 @@ void desencripta(char palavra[]) // função recebe um ponteiro para um array de c
 
 	if (palavra == NULL)
 	{
-		//trata_exception(2);
+		strcpy(palavra, "erro");
 		return;
 	}
 	else{
