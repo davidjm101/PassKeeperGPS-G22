@@ -14,8 +14,8 @@ pcliente carrega_fich_bin(char nomePasta[])
 	f = fopen(nome_fich, "rb");
 	if (f == NULL) // verifica se o ficheiro foi criado com sucesso
 	{
-		//printf("\nErro! Ficheiro não foi encontrado!\n");
-		//system("PAUSE");
+		printf("\nErro! Ficheiro nao foi encontrado!\n");
+		system("PAUSE");
 		return 0;
 	}
 

@@ -15,6 +15,7 @@ void registo()
 		printf("Introduza o username que pretende: ");
 		fflush(stdin);
 		fgets(cliente.username, MAX_USER, stdin);
+		strtok(cliente.username, "\n");
 		// verifica se o username tem entre os minimos e maximos caracteres pedidos
 		if (strlen(cliente.username) < 3 || strlen(cliente.username) > 100)
 		{
@@ -36,6 +37,7 @@ void registo()
 		printf("\ne 4 caracteres especiais dos seguintes( ! ? # $ % & @ + - _ ): ");
 		fflush(stdin);
 		fgets(cliente.masterkey, MAX_MK, stdin);
+		strtok(cliente.masterkey, "\n");
 		verifica=verifica_master_guidelines(cliente.masterkey);
 		if (verifica == false)
 		{
@@ -49,6 +51,7 @@ void registo()
 		printf("\nIndique a sua pergunta de seguranca: ");
 		fflush(stdin);
 		fgets(cliente.perg_seguranca, MAX_PS, stdin);
+		strtok(cliente.perg_seguranca, "\n");
 		// verifica se a pergunta de segurança tem entre os minimos e maximos caracteres pedidos
 		if (strlen(cliente.perg_seguranca) < 1 || strlen(cliente.perg_seguranca) > 100)
 		{
@@ -67,6 +70,7 @@ void registo()
 		printf("Indique a resposta a sua pergunta de seguranca: ");
 		fflush(stdin);
 		fgets(cliente.resp_seguranca, MAX_RS, stdin);
+		strtok(cliente.resp_seguranca, "\n");
 		// verifica se a resposta a pergunta de segurança tem entre os minimos e maximos caracteres pedidos
 		if (strlen(cliente.resp_seguranca) < 4 || strlen(cliente.resp_seguranca) > 32)
 		{
@@ -83,6 +87,7 @@ void registo()
 		printf("\nIndique o nome da pasta onde sera guardado o ficheiro com as suas contas: ");
 		fflush(stdin);
 		fgets(nomePasta, MAX_MK, stdin);
+		strtok(nomePasta, "\n");
 		if (strlen(nomePasta) < 4 || strlen(nomePasta) > MAX_MK)
 		{
 			verifica = false;

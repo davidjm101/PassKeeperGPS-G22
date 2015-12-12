@@ -26,6 +26,7 @@ void menu(){
 				{
 					controlo = 1;
 				}
+
 			} while (controlo<1 || opcao_menu<1 || opcao_menu>5);
 
 
@@ -51,7 +52,7 @@ void menu(){
 			default:
 				break;
 			}
-	} while (1);
+	} while (true);
 	
 
 
