@@ -15,11 +15,21 @@ void escreve_ficheiro(cliente *cliente, char nomePasta[]){
 		system("PAUSE");
 		return 0;
 	}
+	//encripta os dados do cliente
+	encripta(cliente->username);
+	encripta(cliente->masterkey);
+	encripta(cliente->perg_seguranca);
+	encripta(cliente->resp_seguranca);
 
 	fwrite(cliente, sizeof(*cliente), 1, f);
 
 	while (aux != NULL)
 	{
+		//encripta dados das contas
+		encripta(aux->login);
+		encripta(aux->nome);
+		encripta(aux->password);
+
 		fwrite(aux, sizeof(conta), 1, f);
 		aux = aux->prox;
 	}
