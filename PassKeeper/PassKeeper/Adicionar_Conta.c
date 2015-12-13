@@ -90,11 +90,12 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 			fflush(stdin);
 			fgets(conta.nome, MAX_NOME, stdin);
 			strtok(conta.nome, "\n");
+			minusculas(conta.nome);
 			// verifica se o nome tem entre os minimos e maximos caracteres pedidos
-			if (strlen(conta.nome) < 3 || strlen(conta.nome) > MAX_NOME)
+			if (strlen(conta.nome) < 3 || strlen(conta.nome) > MAX_NOME || strcmp(conta.nome, "tudo") == 0 )
 			{
 				verifica = false;
-				printf("\nLNome nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 3 e 100 caracteres)!\n");
+				printf("\nNome nao tem numero de caracteres ideal!\n");
 			}
 			else
 			{
@@ -106,7 +107,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		//ciclo que verifica se existe alguma conta ja com o mesmo nome
 		while (aux != NULL)
 		{
-			if (strcmp(conta.nome, aux->nome) == 0 || strcmp(tolower(conta.nome), "tudo") == 0)
+			if (strcmp(conta.nome, aux->nome) == 0)
 			{
 				existe = true;
 				break;
@@ -150,7 +151,11 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 		cliente1->num_contas++;
 	}
 
+
 	escreve_ficheiro(cliente1, nomePasta);
+
+	strtok(nomePasta, "/");
+	
 
 	printf("\nConta adicionada!!");
 	printf("\nLogin %s", conta.login);

@@ -11,8 +11,6 @@ int cria_fich_bin(cliente *cliente, char nomePasta[])
 
 	pconta escreve;
 	pconta aux;
-
-	//f = fopen(nome_fich, "wb"); // cria ficheiro
 	
 	f = fopen(nomePasta, "wb"); // cria ficheiro
 

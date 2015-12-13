@@ -2,7 +2,6 @@
 
 void pesquisar_conta(cliente *cliente1)
 {
-	
 	int i;
 	int tam;
 	int flag;
@@ -33,19 +32,16 @@ void pesquisar_conta(cliente *cliente1)
 			else
 				break;
 		}
+
 		tam = contador;
 		minusculas(nome_conta);
-		/*for (i = 0; i < 5; i++)
-		{
-			array_aux[i] = tolower(nome_conta[i]);
-		}*/
 		
 		if (strcmp(nome_conta, "tudo") == 0)
 		{
 			while (aux != NULL)
 			{
 				contador_pesq++;
-				printf("%d.  Login:  %-20sPassword:  %-20s\tNome:  %-20s\n",contador_pesq, aux->login, aux->password, aux->nome);
+				printf("%d.  Nome:  %-20sPassword:  %-20s\tLogin:  %-20s\n", contador_pesq, aux->nome, aux->password, aux->login);
 				aux = aux->prox;
 			}
 		}
@@ -68,7 +64,7 @@ void pesquisar_conta(cliente *cliente1)
 				if (flag == 1)
 				{
 					contador_pesq++;
-					printf("%d.  Login:  %-20sPassword:  %-20s\tNome:  %-20s\n", contador_pesq, aux->login, aux->password, aux->nome);
+					printf("%d.  Nome:  %-20sPassword:  %-20s\tLogin:  %-20s\n", contador_pesq, aux->nome, aux->password, aux->login);
 				}
 				aux = aux->prox;
 			}
@@ -77,22 +73,27 @@ void pesquisar_conta(cliente *cliente1)
 		printf("Copiar(Password)/Sair (indique o comando que pertende) : ");
 		fflush(stdin);
 		scanf("%s", &comando);
-		/*for (i = 0; i < 7; i++)
+
+		if (comando != NULL)
 		{
-			array_aux_copia[i] = tolower(comando[i]);
-		}*/
-		minusculas(comando);
-		if (strcmp(comando, "copiar") == 0)
-		{
-			printf("Insira o nome da conta para copiar a password : ");
-			scanf("%s", &nomeCopiar);
-			ShortcutCopiar(cliente1, nomeCopiar);
+			minusculas(comando);
+
+			if (strcmp(comando, "copiar") == 0 && cliente1->num_contas > 0)
+			{
+				printf("Insira o nome da conta para copiar a password : ");
+				scanf("%s", &nomeCopiar);
+				ShortcutCopiar(cliente1, nomeCopiar);
+			}
+			if (strcmp(comando, "sair") == 0)
+			{
+				return;
+			}
 		}
-		if (strcmp(comando, "sair") == 0)
-		{
+		else{
+			printf("Comando não existente ou não há contas para pesquisar\n\n");
 			return;
 		}
 		printf("\n");
-	}
+}
 
 

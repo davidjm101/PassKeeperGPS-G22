@@ -1,6 +1,6 @@
 #include "Bibliotecas.h"
 
-void editar_conta(cliente *cliente1, char nomePasta[])
+int editar_conta(cliente *cliente1, char nomePasta[])
 {
 	char nome_conta[MAX_NOME]="";
 	char le_dado[MAX_NOME]="";
@@ -227,12 +227,17 @@ void editar_conta(cliente *cliente1, char nomePasta[])
 			}
 		}
 
-		escreve_ficheiro(cliente1, nomePasta);
 		printf("\nLogin %s", aux->login);
 		printf("\nPass %s", aux->password);
 		printf("\nNome %s\n", aux->nome);
+
+		escreve_ficheiro(cliente1, nomePasta);
+		strtok(nomePasta, "/");
+
 		system("PAUSE");
+		return 1;
 	}
+	return 0;
 }
 	
 

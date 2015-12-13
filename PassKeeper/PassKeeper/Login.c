@@ -11,22 +11,21 @@ void login()
 	bool verifica=false;
 	pcliente aux; // Auxiliar para verificar todas as pastas
 
-	do{
-		system("cls");
-		titulo();
-		printf("\n					Login       \n\n");
-		printf("Introduza o seu username: ");
-		fflush(stdin);
-		fgets(username, MAX_USER, stdin);
-		strtok(username, "\n");
-		printf("\nIntroduza a sua MasterKey: ");
-		fflush(stdin);
-		fgets(masterkey, MAX_MK, stdin);
-		strtok(masterkey, "\n");
-		//chamar a funcao que vai verificar se o username e login estao bem, e retornar um boolean true se estiver tudo certo
-	} while (verifica==true);
-
 	dir = opendir("."); // Abre directoria atual
+
+	system("cls");
+	titulo();
+	printf("\n					Login       \n\n");
+	printf("Introduza o seu username: ");
+	fflush(stdin);
+	fgets(username, MAX_USER, stdin);
+	strtok(username, "\n");
+	printf("\nIntroduza a sua MasterKey: ");
+	fflush(stdin);
+	fgets(masterkey, MAX_MK, stdin);
+	strtok(masterkey, "\n");
+	//chamar a funcao que vai verificar se o username e login estao bem, e retornar um boolean true se estiver tudo certo
+
 	while ((ent = readdir(dir)) != NULL) // Enquanto o leitor não der negativo escrever todos os que forem do tipo directoria
 	{
 		if (ent->d_type == DT_DIR){

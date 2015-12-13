@@ -38,7 +38,9 @@ void recupera_MasterKey(){
 				}
 			}
 		}
-		if (verifica == false) printf("Login não encontrado");
+		if (verifica == false) 
+			printf("Login não encontrado");
+
 	} while (verifica == false);
 
 	printf("%s", aux->perg_seguranca);

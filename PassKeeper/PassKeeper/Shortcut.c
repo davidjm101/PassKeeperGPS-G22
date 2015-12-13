@@ -4,9 +4,29 @@ void ShortcutCopiar(cliente *cliente1, char nome_conta[])
 {
 	conta *aux = cliente1->lista;
 
-	while (strcmp(nome_conta, aux->nome)!= 0)
+	if (aux == NULL)
+	{
+		printf("Não existem contas\n\n");
+		system("PAUSE");
+		return;
+	}
+
+
+	while (strcmp(nome_conta, aux->nome) != 0)
 	{
 		aux = aux->prox;
+		if (aux == NULL)
+		{
+			printf("Não existem contas\n\n");
+			system("PAUSE");
+			return;
+		}
+	}
+
+	if (aux == NULL)
+	{
+		printf("Nao existe esse nome de conta\n\n");
+		system("PAUSE");
 	}
 
 	wchar_t wdadoes[20];

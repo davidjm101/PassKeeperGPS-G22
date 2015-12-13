@@ -34,17 +34,21 @@ void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 		{
 		case 1:
 			adicionar_conta(cliente, nomePasta);
+			cliente = carrega_fich_bin(nomePasta);
 			break;
 		case 2:
-			editar_conta(cliente, nomePasta);
+			if (editar_conta(cliente, nomePasta) == 1)
+				cliente = carrega_fich_bin(nomePasta);
 			break;
 		case 3:
 			apagar_conta(cliente, nomePasta);
+			cliente = carrega_fich_bin(nomePasta);
 			break;
 		case 4:
 			pesquisar_conta(cliente);
 			break;
 		case 5:
+			escreve_ficheiro(cliente, nomePasta);
 			return;
 			break;
 		default:

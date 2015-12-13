@@ -110,11 +110,13 @@ void registo()
 		exit(1);
 	}
 
-	cria_fich_bin(&cliente, nomePasta);
-
-	printf("\n\tNome: %s",cliente.username);
+	printf("\n\tNome: %s", cliente.username);
 	printf("\n\tMaster: %s", cliente.masterkey);
 	printf("\n\tPerg: %s", cliente.perg_seguranca);
-	printf("\n\tNome: %s\n", cliente.resp_seguranca);
+	printf("\n\tNome: %s\n\n", cliente.resp_seguranca);
 	system("PAUSE");
+
+	cria_fich_bin(&cliente, nomePasta);
+
+
 }

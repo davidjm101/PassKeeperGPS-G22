@@ -70,7 +70,9 @@ void apagar_conta(cliente *cliente1, char nomePasta[])
 		aux = aux->prox;
 	}
 	cliente1->num_contas--;
+
 	escreve_ficheiro(cliente1, nomePasta);
+	strtok(nomePasta, "/");
 
 	system("PAUSE");
 }
