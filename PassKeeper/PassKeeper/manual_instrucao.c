@@ -44,13 +44,12 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 2:
-			printf("Para efectuar um registo o utilizador deve indicar os dados necessarios para tal.\n");
-			printf("Deve comecar por indicar o username que pretende,\n");
-			printf("em seguida deve indicar a MasterKey que pretende, seguindo as guidelines indicadas,\n");
-			printf("apos a introducao da Masterkey, devera indicar qual a sua pergunta de serguranca,\n");
-			printf("de seguida indicar a resposta a pergunta de seguranca\n");
-			printf("a pergunta e resposta de seguranca servirao para recuperar a MasterKey caso o utilizador assim o desejar.\n");
-			printf("Por fim devera indicar o nome da pasta onde sera guardado o ficheiro que contem todas as contas.\n");
+			printf("Para recuperar a sua MasterKey o utilizador devera indicar o nome da pasta onde tem guardado o seu ficheiro de dados.\n");
+			printf("Apos indicar o nome da pasta, e caso nao houver problemas ao carregar o ficheiro de dados,\n");
+			printf("sera indicado ao utilizador a sua pergunta de segurança,\n");
+			printf("a qual devera indicar a sua resposta,\n");
+			printf("caso a resposta seja igual ao indicado no ficheiro, aquando a criacao do registo\n");
+			printf("sera entao indicado ao utilizador a sua MasterKey.\n");
 			system("PAUSE");
 			break;
 		case 3:

@@ -49,7 +49,7 @@ void recupera_MasterKey(){
 	fflush(stdin);
 	fgets(resp_seg, MAX_RS, stdin);
 	strtok(resp_seg, "\n");
-
+	minusculas(resp_seg);
 	if (strcmp(resp_seg, aux->resp_seguranca) != 0)
 	{
 		printf("\nResposta de seguranca incorreta");

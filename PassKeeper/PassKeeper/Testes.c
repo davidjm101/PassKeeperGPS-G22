@@ -2,6 +2,7 @@
 #include "Bibliotecas.h"
 CuSuite* CuStringGetSuite(CuTest* tc);
 
+///////////////testes para a funcao minusculas///////////////////
 void teste_string(CuTest* tc)
 {
 
@@ -40,7 +41,7 @@ void teste_string4(CuTest* tc)
 	CuAssertIntEquals(tc, 1, controlo);
 }
 
-
+///////////////testes para a funcao encripta///////////////////
 void teste_encripta(CuTest* tc)
 {
 	int controlo=0;
@@ -78,7 +79,7 @@ void teste_encripta4(CuTest* tc)
 	CuAssertStrEquals(tc, " ", palavra);
 }
 
-
+///////////////testes para a funcao desencripta///////////////////
 void teste_desencripta(CuTest* tc)
 {
 	int controlo = 0;
@@ -116,7 +117,7 @@ void teste_desencripta4(CuTest* tc)
 	CuAssertStrEquals(tc, " ", palavra);
 }
 
-
+///////////////testes para a funcao gera_pass_auto///////////////////
 void teste_gerapass(CuTest* tc)
 {
 	int controlo = 0;

@@ -82,6 +82,7 @@ void registo()
 			verifica = true;
 		}
 	} while (verifica == false);
+	minusculas(cliente.resp_seguranca);
 	
 	do{
 		printf("\nIndique o nome da pasta onde sera guardado o ficheiro com as suas contas: ");
