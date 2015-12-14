@@ -34,7 +34,11 @@ void pesquisar_conta(cliente *cliente1)
 		}
 
 		tam = contador;
-		minusculas(nome_conta);
+		if (minusculas(nome_conta) == 1)
+		{
+			printf("Erro de operacao");
+			return;
+		}
 		
 		if (strcmp(nome_conta, "tudo") == 0)
 		{
@@ -76,7 +80,12 @@ void pesquisar_conta(cliente *cliente1)
 
 		if (comando != NULL)
 		{
-			minusculas(comando);
+			
+			if (minusculas(comando) == 1)
+			{
+				printf("Erro de operacao");
+				return;
+			}
 
 			if (strcmp(comando, "copiar") == 0 && cliente1->num_contas > 0)
 			{

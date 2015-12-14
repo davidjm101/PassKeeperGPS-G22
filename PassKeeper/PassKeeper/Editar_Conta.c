@@ -151,7 +151,17 @@ int editar_conta(cliente *cliente1, char nomePasta[])
 			}
 			else if (opcao_menu == 2)
 			{
-				gera_pass_auto(password);
+				controlo = gera_pass_auto(password);
+				if (controlo == 1)
+				{
+					printf("Erro fatal");
+					system("PAUSE");
+					exit(0);
+				}
+				else
+				{
+					printf("Password gerada com sucesso");
+				}
 			}
 			
 			printf("Pretende alterar mesmo a password para %s (1-Sim 2-Nao):", password);

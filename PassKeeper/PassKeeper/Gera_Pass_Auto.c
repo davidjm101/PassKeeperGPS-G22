@@ -1,8 +1,13 @@
 #include "Bibliotecas.h"
 
-void gera_pass_auto(char password[])
+int gera_pass_auto(char password[])
 {
 	int i = 0;
+
+	if (password == NULL )
+	{
+		return 1;
+	}
 	char maiusculas[26] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 		'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
 		'U', 'V', 'W', 'X', 'Y', 'Z' };
@@ -41,4 +46,5 @@ void gera_pass_auto(char password[])
 		}
 	}
 	password[MAX_PASS-1] = '\0';
+	return 0;
 }

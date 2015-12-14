@@ -45,13 +45,15 @@ int editar_conta(cliente *cliente1, char nomePasta[]);
 void apagar_conta(cliente *cliente, char nomePasta[]);
 void pesquisar_conta(cliente *cliente);
 int cria_fich_bin(pcliente cliente, char nomePasta[]);
-void minusculas(char palavra[]);
+int minusculas(char palavra[]);
 pcliente carrega_fich_bin(char nomePasta[]);
 char* ShortcutColar();
+int encripta(char palavra[]);
+int desencripta(char palavra[]);
 
 void ShortcutCopiar(cliente *cliente1, char nomeConta[]);
 void escreve_ficheiro(cliente *cliente, char nomePasta[]);
-void gera_pass_auto(char password[]);
+int gera_pass_auto(char password[]);
 
 
 

@@ -10,6 +10,8 @@ bool verifica_master_guidelines(char masterkey[MAX_MK])
 	int conta_numeros = 0;
 	int conta_especiais = 0;
 	int i = 0;
+
+	
 	
 	//verifca se a masterkey tem os caracteres minimos ou maximo obrigatorios
 	if (strlen(masterkey) < 12 || strlen(masterkey) > 16)

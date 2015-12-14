@@ -72,8 +72,18 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	}
 	else if (opcao_menu==2)
 	{
-		gera_pass_auto(conta.password);
-		printf("Password gerada com sucesso");
+		controlo = gera_pass_auto(conta.password);
+		if (controlo == 1)
+		{
+			printf("Erro fatal");
+			system("PAUSE");
+			exit(0);
+		}
+		else
+		{
+			printf("Password gerada com sucesso");
+		}
+		
 	}
 	else
 	{
