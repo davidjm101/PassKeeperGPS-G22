@@ -14,7 +14,7 @@ void manual_intrucao()
 			printf("4- Editar conta\n");
 			printf("5- Apagar conta\n");
 			printf("6- Pesquisar conta\n");
-			printf("7- Sair\n\n");
+			printf("7- Voltar\n\n");
 			printf("Indique a opcao que pretende: ");
 			fflush(stdin);
 			controlo = scanf("%d", &opcao_menu);// controlo serve para verificar que apenas inteiros sao inseridos

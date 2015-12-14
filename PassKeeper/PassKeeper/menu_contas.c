@@ -49,7 +49,9 @@ void menu_contas(char nomeConta[], cliente *cliente, char nomePasta[])
 			break;
 		case 5:
 			escreve_ficheiro(cliente, nomePasta);
-			return;
+			printf("Ate a proxima %s\n", nomeConta);
+			system("PAUSE");
+			exit(0);
 			break;
 		default:
 			break;

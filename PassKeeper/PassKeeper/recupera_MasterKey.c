@@ -39,11 +39,11 @@ void recupera_MasterKey(){
 			}
 		}
 		if (verifica == false) 
-			printf("Login não encontrado");
+			printf("Login nao encontrado");
 
 	} while (verifica == false);
 
-	printf("%s", aux->perg_seguranca);
+	printf("A sua pergunta de seguranca e :\n \t \t %s", aux->perg_seguranca);
 
 	printf("\nDigite a sua resposta de seguranca : ");
 	fflush(stdin);
@@ -62,7 +62,7 @@ void recupera_MasterKey(){
 
 	if (verifica == true)
 	{
-		printf("\n A sua Masterkey é  : %s\n", aux->masterkey);
+		printf("\n A sua Masterkey e  : %s\n", aux->masterkey);
 		system("PAUSE");
 	}
 }

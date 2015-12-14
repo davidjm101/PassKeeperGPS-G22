@@ -37,4 +37,6 @@ void login()
 			}
 		}
 	}
+	printf("Erro nos dados introduzidos\n");
+	system("PAUSE");
 }

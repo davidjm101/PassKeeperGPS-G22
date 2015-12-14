@@ -42,20 +42,6 @@ pcliente carrega_fich_bin(char nomePasta[])
 			desencripta(aux->password);
 	}
 	
-
-	//if (fread(cliente->lista, sizeof(conta), 1, f) == NULL) // lê uma estrutura do ficheiro binário
-	//{
-	//	cliente->lista = NULL;
-	//	cliente->num_contas = 0;
-	//	aux = cliente->lista; // ponteiro auxiliar fica a apontar para a primeira estrutura
-	//}
-	//else{
-	//	novo = malloc(sizeof(conta)); // aloca espaço para uma nova conta
-	//	fread(novo, sizeof(conta), 1, f); // lê do ficheiro binário
-	//	aux->prox = novo; // ponteiro prox do elemento anterior fica a apontar para o novo elemento
-	//	aux = novo; // ponteiro aux(ultimo elemento da lista) é actualizado
-	//}
-
 	
 	for (i = 1; i < cliente->num_contas; i++) //ciclo para carregar todas as contas do utilizador
 	{

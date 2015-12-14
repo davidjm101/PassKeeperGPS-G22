@@ -11,7 +11,7 @@ void escreve_ficheiro(cliente *cliente, char nomePasta[]){
 
 	if (f == NULL) // verifica se o ficheiro foi criado com sucesso
 	{
-		printf("\nErro! Ficheiro não foi criado com sucesso!\n");
+		printf("\nErro! Ficheiro nao foi criado com sucesso!\n");
 		system("PAUSE");
 		return 0;
 	}

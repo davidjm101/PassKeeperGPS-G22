@@ -99,7 +99,7 @@ void pesquisar_conta(cliente *cliente1)
 			}
 		}
 		else{
-			printf("Comando não existente ou não há contas para pesquisar\n\n");
+			printf("Comando nao existente ou nao ha contas para pesquisar\n\n");
 			return;
 		}
 		printf("\n");

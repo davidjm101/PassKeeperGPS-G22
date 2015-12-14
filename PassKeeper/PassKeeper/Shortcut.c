@@ -6,7 +6,7 @@ void ShortcutCopiar(cliente *cliente1, char nome_conta[])
 
 	if (aux == NULL)
 	{
-		printf("Não existem contas\n\n");
+		printf("Nao existem contas\n\n");
 		system("PAUSE");
 		return;
 	}
@@ -17,7 +17,7 @@ void ShortcutCopiar(cliente *cliente1, char nome_conta[])
 		aux = aux->prox;
 		if (aux == NULL)
 		{
-			printf("Não existem contas\n\n");
+			printf("Nao existem contas\n\n");
 			system("PAUSE");
 			return;
 		}

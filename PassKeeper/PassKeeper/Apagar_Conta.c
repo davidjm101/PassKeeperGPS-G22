@@ -10,7 +10,7 @@ void apagar_conta(cliente *cliente1, char nomePasta[])
 	system("cls");
 	titulo();
 	printf("\n			Apagar Conta       \n\n");
-	printf("indique o nome da conta a apagar: ");
+	printf("Indique o nome da conta a apagar: ");
 	fflush(stdin);
 	fgets(nome_conta, MAX_NOME, stdin);
 	strtok(nome_conta, "\n");
@@ -51,7 +51,7 @@ void apagar_conta(cliente *cliente1, char nomePasta[])
 		}
 	}
 	else{
-		printf("\n\n\t Não existem contas para remover!");
+		printf("\n\n\t Nao existem contas para remover!");
 	}
 
 	//Ciclo while que procura o nome equivalente

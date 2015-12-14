@@ -8,6 +8,10 @@ int editar_conta(cliente *cliente1, char nomePasta[])
 	int opcao_menu = 0;
 	int controlo = 0 ;
 	int i = 0;
+	int flag1;
+	int flag2;
+	int tam = 0;
+	int j = 0;
 	bool verifica = false;
 	conta *aux = cliente1->lista;
 	
@@ -132,17 +136,39 @@ int editar_conta(cliente *cliente1, char nomePasta[])
 			{
 				do
 				{
+					flag1 = 0;
+					flag2 = 0;
 					printf("Introduza a nova password: ");
 					fflush(stdin);
 					fgets(password, MAX_PASS, stdin);
 					strtok(password, "\n");
 					// verifica se a password tem entre os minimos e maximos caracteres pedidos
-					if (strlen(password) < 1 || strlen(password) > 16)
+					if (strlen(password) < 1 || strlen(password) > MAX_PASS)
 					{
-						verifica = false;
+						flag1 = 1;
 						printf("\nPassword nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 16 caracteres)!\n");
 					}
+					if (strcmp(password, "\n") == 0)
+					{
+						printf("\n\nPassword invalida\n\n");
+						flag2 = 1;
+					}
 					else
+					{
+						tam = strlen(password);
+						for (i = 0; i < tam; i++)
+						{
+							j = password[i];
+							if (j == ' ')
+							{
+								verifica = false;
+								flag2 = 1;
+								printf("\nPassword tem espacos\n");
+								break;
+							}
+						}
+					}
+					if (flag1 == 0 && flag2 == 0)
 					{
 						verifica = true;
 					}

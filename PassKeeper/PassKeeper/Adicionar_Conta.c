@@ -3,8 +3,13 @@
 void adicionar_conta(cliente *cliente1, char nomePasta[])
 {
 	char opcao[10];
+	int i = 0;
+	char j;
+	int tam = 0;
 	int opcao_menu = 0;
 	int controlo = 0;
+	int flag1;
+	int flag2;
 	conta conta, *aux, *novo;
 	FILE *f = NULL;
 	bool existe = false;//variavel que serve para verificar se o nome da conta ja existe associado a outra conta
@@ -17,20 +22,47 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	
 	do
 	{
+		flag1 = 0;
+		flag2 = 0;
 		printf("Indique o login: ");
 		fflush(stdin);
 		fgets(conta.login, MAX_LOG, stdin);
 		strtok(conta.login, "\n");
-		// verifica se o login tem entre os minimos e maximos caracteres pedidos
-		if (strlen(conta.login) < 1 || strlen(conta.login) > MAX_LOG)
-		{
-			verifica = false;
-			printf("\nLogin nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 100 caracteres)!\n");
-		}
-		else
-		{
-			verifica = true;
-		}
+		
+			// verifica se o login tem entre os minimos e maximos caracteres pedidos
+			if (strlen(conta.login) < 1 || strlen(conta.login) > MAX_LOG )
+			{
+				verifica = false;
+				flag1 = 1;
+				printf("\nLogin nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 100 caracteres)!\n");
+			}
+
+			if (strcmp(conta.login, "\n") == 0)
+			{
+				printf("\n\nNome invalido\n\n");
+			}
+			else
+			{
+
+				tam = strlen(conta.login);
+
+				for (i = 0; i < tam; i++)
+				{
+					j = conta.login[i];
+					if (j == ' ')
+					{
+						verifica = false;
+						flag2 = 1;
+						printf("\nLogin tem espacos\n");
+						break;
+					}
+				}
+
+				if (flag1 == 0 && flag2 == 0)
+				{
+					verifica = true;
+				}
+			}
 	} while (verifica == false);
 	
 	do
@@ -52,7 +84,11 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 
 	if (opcao_menu == 1)
 	{
-		do{
+		do
+		{
+			verifica = false;
+			flag1 = 0;
+			flag2 = 0;
 			printf("\nIndique a password: ");
 			fflush(stdin);
 			fgets(conta.password, MAX_PASS, stdin);
@@ -60,13 +96,34 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 			// verifica se a password tem entre os minimos e maximos caracteres pedidos
 			if (strlen(conta.password) < 1 || strlen(conta.password) > MAX_PASS)
 			{
-				verifica = false;
+				flag1 = 1;
 				printf("\nPassword nao tem caracteres suficientes ou tem caracteres a mais (deve ter entre 1 e 16 caracteres)!\n");
+			}
+			if (strcmp(conta.password, "\n") == 0)
+			{
+				printf("\n\nPassword invalida\n\n");
+				flag2 = 1;
 			}
 			else
 			{
-				verifica = true;
+				tam = strlen(conta.password);
+				for (i = 0; i < tam; i++)
+				{
+					j = conta.password[i];
+					if (j == ' ')
+					{
+						verifica = false;
+						flag2 = 1;
+						printf("\nPassword tem espacos\n");
+						break;
+					}
+				}
 			}
+				if (flag1 == 0 && flag2 == 0)
+				{
+					verifica = true;
+				}
+			
 		} while (verifica == false);
 		
 	}
@@ -131,7 +188,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 
 		if (existe==true)
 		{
-			printf("\nNome de conta existente ou inválido, tente novamente");
+			printf("\nNome de conta existente ou invalido, tente novamente");
 		}
 	} while (existe==true);
 	
@@ -170,7 +227,7 @@ void adicionar_conta(cliente *cliente1, char nomePasta[])
 	printf("\nConta adicionada!!");
 	printf("\nLogin %s", conta.login);
 	printf("\nPass %s", conta.password);
-	printf("\nNome %s", conta.nome);
+	printf("\nNome %s\n", conta.nome);
 	system("PAUSE");
 
 }
