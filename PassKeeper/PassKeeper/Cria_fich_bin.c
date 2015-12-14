@@ -24,10 +24,32 @@ int cria_fich_bin(cliente *cliente, char nomePasta[])
 	cliente->num_contas = 0;
 	cliente->lista = NULL;
 	// encriptação dos dados para escrita
-	encripta(cliente->username);
-	encripta(cliente->masterkey);
-	encripta(cliente->perg_seguranca);
-	encripta(cliente->resp_seguranca);
+	if (encripta(cliente->username) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+
+	if (encripta(cliente->masterkey) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+
+	if (encripta(cliente->perg_seguranca) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+	if (encripta(cliente->resp_seguranca) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
 	//escreve dados no ficheiro binário
 	fwrite(cliente, sizeof(*cliente), 1, f); // escreve no ficheiro binário a informação relativa ao cliente (utilizador) (login, masterkey, pergunta secreta, etc)
 	

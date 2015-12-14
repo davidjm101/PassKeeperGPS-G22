@@ -1,6 +1,6 @@
 #include"Bibliotecas.h"
 
-void encripta(char palavra[]) // função recebe um ponteiro para um array de caracteres
+int encripta(char palavra[]) // função recebe um ponteiro para um array de caracteres
 {
 	int num_chars = 0;
 	int i = 0;
@@ -20,10 +20,9 @@ void encripta(char palavra[]) // função recebe um ponteiro para um array de cara
 						   '@', 'G', '4', 'u', 'S', 'i', '+', 'H', '5', 'v', 'T', 'j', 
 						   '-', 'I', '6', 'w', 'U', 'k', '_', 'J', '7', 'x', 'V', 'l'};
 
-	if (palavra == NULL)
+	if (palavra == NULL || strlen(palavra) == 0)
 	{
-		strcpy(palavra, "erro");
-		return;
+		return 1;
 	}
 	else{
 		num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
@@ -46,12 +45,11 @@ void encripta(char palavra[]) // função recebe um ponteiro para um array de cara
 				{
 					if (palavra[i] == ' ') // se o caracter for espaço ignora e passa para o seguinte
 					{
-						palavra[i] = '_';
-						j--;
 						break;
 					}
 				}
 			}
 		}
 	}
+	return 0;
 }

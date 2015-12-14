@@ -16,19 +16,61 @@ void escreve_ficheiro(cliente *cliente, char nomePasta[]){
 		return 0;
 	}
 	//encripta os dados do cliente
-	encripta(cliente->username);
-	encripta(cliente->masterkey);
-	encripta(cliente->perg_seguranca);
-	encripta(cliente->resp_seguranca);
+	if (encripta(cliente->username) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+	if (encripta(cliente->masterkey) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+	if (encripta(cliente->perg_seguranca) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+	if (encripta(cliente->resp_seguranca) == 1)
+	{
+		printf("Erro ao encriptar\n");
+		system("PAUSE");
+		exit(0);
+	}
+	
+	
+	
 
 	fwrite(cliente, sizeof(*cliente), 1, f);
 
 	while (aux != NULL)
 	{
 		//encripta dados das contas
-		encripta(aux->login);
-		encripta(aux->nome);
-		encripta(aux->password);
+		
+		
+		
+		if (encripta(aux->login) == 1)
+		{
+			printf("Erro ao encriptar\n");
+			system("PAUSE");
+			exit(0);
+		}
+		if (encripta(aux->nome) == 1)
+		{
+			printf("Erro ao encriptar\n");
+			system("PAUSE");
+			exit(0);
+		}
+		if (encripta(aux->password) == 1)
+		{
+			printf("Erro ao encriptar\n");
+			system("PAUSE");
+			exit(0);
+		}
+	
 
 		fwrite(aux, sizeof(conta), 1, f);
 		aux = aux->prox;

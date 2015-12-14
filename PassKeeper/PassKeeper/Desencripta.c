@@ -1,6 +1,6 @@
 #include"Bibliotecas.h"
 
-void desencripta(char palavra[]) // função recebe um ponteiro para um array de caracteres
+int desencripta(char palavra[]) // função recebe um ponteiro para um array de caracteres
 {
 	int num_chars = 0;
 	int i = 0;
@@ -21,8 +21,7 @@ void desencripta(char palavra[]) // função recebe um ponteiro para um array de c
 
 	if (palavra == NULL)
 	{
-		strcpy(palavra, "erro");
-		return;
+		return 1;
 	}
 	else{
 		num_chars = strlen(palavra); // o número de caracteres do array recebido como argumento é atribuido à var num_chars
@@ -50,4 +49,5 @@ void desencripta(char palavra[]) // função recebe um ponteiro para um array de c
 			}
 		}
 	}
+	return 0;
 }
