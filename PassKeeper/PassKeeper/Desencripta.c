@@ -19,7 +19,7 @@ int desencripta(char palavra[]) // função recebe um ponteiro para um array de ca
 						   '@', 'G', '4', 'u', 'S', 'i', '+', 'H', '5', 'v', 'T', 'j',
 						   '-', 'I', '6', 'w', 'U', 'k', '_', 'J', '7', 'x', 'V', 'l' };
 
-	if (palavra == NULL)
+	if (palavra == NULL || strcmp(palavra, "\n") == 0)
 	{
 		return 1;
 	}

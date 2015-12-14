@@ -41,6 +41,36 @@ void teste_string4(CuTest* tc)
 	CuAssertIntEquals(tc, 1, controlo);
 }
 
+void teste_string5(CuTest* tc)
+{
+
+	char s[] = "\n";
+	minusculas(s);
+	CuString* str = CuStringNew();
+	CuAssertStrEquals(tc, "\n", s);
+
+}
+
+void teste_string6(CuTest* tc)
+{
+
+	char s[] = "A ";
+	minusculas(s);
+	CuString* str = CuStringNew();
+	CuAssertStrEquals(tc, "a ", s);
+
+}
+
+void teste_string7(CuTest* tc)
+{
+
+	char s[] = "\t";
+	minusculas(s);
+	CuString* str = CuStringNew();
+	CuAssertStrEquals(tc, "\t", s);
+
+}
+
 ///////////////testes para a funcao encripta///////////////////
 void teste_encripta(CuTest* tc)
 {
@@ -77,6 +107,15 @@ void teste_encripta4(CuTest* tc)
 	controlo = encripta(palavra);
 	CuString* str = CuStringNew();
 	CuAssertStrEquals(tc, " ", palavra);
+}
+
+void teste_encripta5(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[] = "\n";
+	controlo = encripta(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 1, controlo);
 }
 
 ///////////////testes para a funcao desencripta///////////////////
@@ -117,14 +156,32 @@ void teste_desencripta4(CuTest* tc)
 	CuAssertStrEquals(tc, " ", palavra);
 }
 
+void teste_desencripta5(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[] = "\n";
+	controlo = desencripta(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 1, controlo);
+}
+
 ///////////////testes para a funcao gera_pass_auto///////////////////
 void teste_gerapass(CuTest* tc)
 {
 	int controlo = 0;
 	char palavra[] = { NULL };
-	controlo = encripta(palavra);
+	controlo = gera_pass_auto(palavra);
 	CuString* str = CuStringNew();
 	CuAssertIntEquals(tc, 1, controlo);
+}
+
+void teste_gerapass2(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[MAX_PASS] = "\n";
+	controlo = gera_pass_auto(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 0 , controlo);
 }
 
 
@@ -136,15 +193,21 @@ CuSuite* CuStringGetSuite(void)
 	SUITE_ADD_TEST(suite, teste_string2);
 	SUITE_ADD_TEST(suite, teste_string3);
 	SUITE_ADD_TEST(suite, teste_string4);
+	SUITE_ADD_TEST(suite, teste_string5);
+	SUITE_ADD_TEST(suite, teste_string6);
+	SUITE_ADD_TEST(suite, teste_string7);
 	SUITE_ADD_TEST(suite, teste_encripta);
 	SUITE_ADD_TEST(suite, teste_encripta2);
 	SUITE_ADD_TEST(suite, teste_encripta3);
 	SUITE_ADD_TEST(suite, teste_encripta4);
+	SUITE_ADD_TEST(suite, teste_encripta5);
 	SUITE_ADD_TEST(suite, teste_desencripta);
 	SUITE_ADD_TEST(suite, teste_desencripta2);
 	SUITE_ADD_TEST(suite, teste_desencripta3);
 	SUITE_ADD_TEST(suite, teste_desencripta4);
+	SUITE_ADD_TEST(suite, teste_desencripta5);
 	SUITE_ADD_TEST(suite, teste_gerapass);
+	//SUITE_ADD_TEST(suite, teste_gerapass2);
 
 	return suite;
 }
