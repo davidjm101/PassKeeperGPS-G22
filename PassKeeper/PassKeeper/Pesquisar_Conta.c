@@ -20,7 +20,7 @@ void pesquisar_conta(cliente *cliente1)
 	system("cls");
 	titulo();
 	printf("\n			Pesquisar Conta       \n\n");
-	printf("Indique o nome da conta a pesquisar (Pode indicar apenas um prefixo do nome): ");
+	printf("Indique o nome da conta a pesquisar (Pode indicar apenas um prefixo do nome) ou indicar (tudo) para ver todas as contas: ");
 	fflush(stdin);
 	scanf("%s", &nome_conta);
 

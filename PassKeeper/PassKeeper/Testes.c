@@ -184,7 +184,41 @@ void teste_gerapass2(CuTest* tc)
 	CuAssertIntEquals(tc, 0 , controlo);
 }
 
+void teste_gerapass3(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[MAX_PASS] = "";
+	controlo = gera_pass_auto(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 0, controlo);
+}
 
+void teste_gerapass4(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[MAX_PASS] = " ";
+	controlo = gera_pass_auto(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 0, controlo);
+}
+
+void teste_gerapass5(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[MAX_PASS] = "\t";
+	controlo = gera_pass_auto(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 0, controlo);
+}
+
+void teste_gerapass6(CuTest* tc)
+{
+	int controlo = 0;
+	char palavra[MAX_PASS] = "\0";
+	controlo = gera_pass_auto(palavra);
+	CuString* str = CuStringNew();
+	CuAssertIntEquals(tc, 0, controlo);
+}
 CuSuite* CuStringGetSuite(void)
 {
 	CuSuite* suite = CuSuiteNew();
@@ -207,7 +241,11 @@ CuSuite* CuStringGetSuite(void)
 	SUITE_ADD_TEST(suite, teste_desencripta4);
 	SUITE_ADD_TEST(suite, teste_desencripta5);
 	SUITE_ADD_TEST(suite, teste_gerapass);
-	//SUITE_ADD_TEST(suite, teste_gerapass2);
+	SUITE_ADD_TEST(suite, teste_gerapass2);
+	SUITE_ADD_TEST(suite, teste_gerapass3);
+	SUITE_ADD_TEST(suite, teste_gerapass4);
+	SUITE_ADD_TEST(suite, teste_gerapass5);
+	SUITE_ADD_TEST(suite, teste_gerapass6);
 
 	return suite;
 }

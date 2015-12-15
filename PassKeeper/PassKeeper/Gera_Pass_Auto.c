@@ -4,7 +4,7 @@ int gera_pass_auto(char password[])
 {
 	int i = 0;
 
-	if (password == NULL )
+	if (password == NULL)
 	{
 		return 1;
 	}
