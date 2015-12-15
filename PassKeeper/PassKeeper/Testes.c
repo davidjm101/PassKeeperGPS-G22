@@ -169,7 +169,7 @@ void teste_desencripta5(CuTest* tc)
 void teste_gerapass(CuTest* tc)
 {
 	int controlo = 0;
-	char palavra[] = { NULL };
+	char *palavra=  NULL;
 	controlo = gera_pass_auto(palavra);
 	CuString* str = CuStringNew();
 	CuAssertIntEquals(tc, 1, controlo);

@@ -4,10 +4,7 @@ int gera_pass_auto(char password[])
 {
 	int i = 0;
 
-	if (password == NULL)
-	{
-		return 1;
-	}
+
 	char maiusculas[26] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
 		'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
 		'U', 'V', 'W', 'X', 'Y', 'Z' };
@@ -19,6 +16,11 @@ int gera_pass_auto(char password[])
 	char numeros[10] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 	char especiais[10] = { '!', '?', '#', '$', '%', '&', '@', '+', '-', '_' };
+
+	if (password == NULL)
+	{
+		return 1;
+	}
 
 	srand(time(NULL));
 	int random = 0;
