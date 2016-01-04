@@ -14,7 +14,9 @@ void manual_intrucao()
 			printf("4- Editar conta\n");
 			printf("5- Apagar conta\n");
 			printf("6- Pesquisar conta\n");
-			printf("7- Voltar\n\n");
+			printf("7- Copiar\n");
+			printf("8- Colar\n");
+			printf("9- Voltar\n\n");
 			printf("Indique a opcao que pretende: ");
 			fflush(stdin);
 			controlo = scanf("%d", &opcao_menu);// controlo serve para verificar que apenas inteiros sao inseridos
@@ -28,12 +30,15 @@ void manual_intrucao()
 			{
 				controlo = 1;
 			}
-		} while (controlo<1 || opcao_menu<1 || opcao_menu>7);
+		} while (controlo<1 || opcao_menu<1 || opcao_menu>9);
 
 
 		switch (opcao_menu)
 		{
 		case 1:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
 			printf("Para efectuar um registo o utilizador deve indicar os dados necessarios para tal.\n");
 			printf("Deve comecar por indicar o username que pretende,\n");
 			printf("em seguida deve indicar a MasterKey que pretende, seguindo as guidelines indicadas,\n");
@@ -44,6 +49,9 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 2:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
 			printf("Para recuperar a sua MasterKey o utilizador devera indicar o nome da pasta onde tem guardado o seu ficheiro de dados.\n");
 			printf("Apos indicar o nome da pasta, e caso nao houver problemas ao carregar o ficheiro de dados,\n");
 			printf("sera indicado ao utilizador a sua pergunta de segurança,\n");
@@ -53,6 +61,9 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 3:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
 			printf("Depois de o utilizador ter efectuado o login,podera editar uma conta.\n");
 			printf("Para tal devera comecar por indicar o nome da conta a editar,\n");
 			printf("em seguida sera mostrado ao utilizador todos os dados relativos a conta pesquisada.,\n");
@@ -65,6 +76,9 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 4:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
 			printf("Depois de o utilizador ter efectuado o login,podera adicionar novas contas.\n");
 			printf("Para tal devera comecar por indicar o login da conta,\n");
 			printf("em seguida deve indicar a password que pretende, podera indicar se quer uma password manual ou automatica,\n");
@@ -75,6 +89,9 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 5:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
 			printf("Depois de o utilizador ter efectuado o login,podera apagar uma conta.\n");
 			printf("Para tal devera indicar o nome da conta a apagar,\n");
 			printf("caso esta conta exista, o programa perguntara ao utilizador se realmente pretende apagar essa conta\n");
@@ -82,6 +99,9 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 6:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
 			printf("Depois de o utilizador ter efectuado o login,podera pesquisar uma conta.\n");
 			printf("Para tal devera indicar o nome da conta a pesquisar sendo pesquisado a conta com este nome,\n");
 			printf("ou apenas um prefixo (ex: gma),sendo que serao pesquisado todas as contas que comecem por esse prefixo.\n");
@@ -89,6 +109,25 @@ void manual_intrucao()
 			system("PAUSE");
 			break;
 		case 7:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
+			printf("Para copiar uma password do programa para a dashboard sempre que possivel,\n");
+			printf("basta indicar atraves do comando \"copiar\" que pretende copiar a password,\n");
+			printf("sendo automaticamente copiado a password do programa para a dashboard\n");
+			system("PAUSE");
+			break;
+		case 8:
+			system("cls");
+			titulo();
+			printf("\n					Manual de Instrucao       \n\n");
+			printf("Para colar uma password da dashboard para o programa,\n");
+			printf("basta escolher a opcao de colar, isto e, sempre que for possivel colar uma password,\n");
+			printf("o programa indica que e possivel colar a password, basta entao escolher essa opcao.\n");
+			printf("e a password sera colada automaticamente.\n");
+			system("PAUSE");
+			break;
+		case 9:
 			return;
 			break;
 

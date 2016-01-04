@@ -46,7 +46,7 @@ void menu(){
 				manual_intrucao();
 				break;
 			case 5:
-				printf("O programa vai encerrar!");
+				printf("O programa vai encerrar!\n");
 				exit(0);  //Forcar saida do programa
 				break;
 			default:

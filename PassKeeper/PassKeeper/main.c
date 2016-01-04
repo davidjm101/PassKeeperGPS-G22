@@ -2,6 +2,6 @@
 
 void main()
 {
-	/*menu();*/
-   run_alltest();
+	menu();
+  /* run_alltest();*/
 }
